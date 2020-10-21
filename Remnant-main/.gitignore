@@ -1,0 +1,17 @@
+
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+.vs/Remnant/v16/.suo
+*.pdb
+*.ipdb
+*.iobj
+*.dll
+*.obj
+*.txt
+*.pch
+*.tlog
+*.log
+*.recipe

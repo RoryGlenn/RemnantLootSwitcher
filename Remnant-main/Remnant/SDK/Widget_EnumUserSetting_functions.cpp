@@ -1,0 +1,367 @@
+// Name: Remnant, Version: 6
+
+#include "../SDK.h"
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+/*!!HELPER_DEF!!*/
+
+/*!!DEFINE!!*/
+
+namespace UFT
+{
+//---------------------------------------------------------------------------
+// Functions
+//---------------------------------------------------------------------------
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Description_Text_1
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+struct FText UWidget_EnumUserSetting_C::Get_Description_Text_1()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Description_Text_1");
+
+	UWidget_EnumUserSetting_C_Get_Description_Text_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.MenuSelection
+// (Public, BlueprintCallable, BlueprintEvent)
+void UWidget_EnumUserSetting_C::MenuSelection()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.MenuSelection");
+
+	UWidget_EnumUserSetting_C_MenuSelection_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetText_1
+// (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+struct FText UWidget_EnumUserSetting_C::GetText_1()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetText_1");
+
+	UWidget_EnumUserSetting_C_GetText_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetVisibility_2
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+ESlateVisibility UWidget_EnumUserSetting_C::GetVisibility_2()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetVisibility_2");
+
+	UWidget_EnumUserSetting_C_GetVisibility_2_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetVisibility_1
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+ESlateVisibility UWidget_EnumUserSetting_C::GetVisibility_1()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.GetVisibility_1");
+
+	UWidget_EnumUserSetting_C_GetVisibility_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Label_Text_1
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
+struct FText UWidget_EnumUserSetting_C::Get_Label_Text_1()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Label_Text_1");
+
+	UWidget_EnumUserSetting_C_Get_Label_Text_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.ToggleValue
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           Forward                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+void UWidget_EnumUserSetting_C::ToggleValue(bool Forward)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.ToggleValue");
+
+	UWidget_EnumUserSetting_C_ToggleValue_Params params;
+	params.Forward = Forward;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Check_Visibility_1
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+ESlateVisibility UWidget_EnumUserSetting_C::Get_Check_Visibility_1()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Get_Check_Visibility_1");
+
+	UWidget_EnumUserSetting_C_Get_Check_Visibility_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_3_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_3_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_3_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_3_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_4_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_4_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_4_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_4_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_7_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_7_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_7_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_7_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_143_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_143_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_143_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_143_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+void UWidget_EnumUserSetting_C::Construct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.Construct");
+
+	UWidget_EnumUserSetting_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__ArrowLeft_K2Node_ComponentBoundEvent_1_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__ArrowLeft_K2Node_ComponentBoundEvent_1_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__ArrowLeft_K2Node_ComponentBoundEvent_1_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__ArrowLeft_K2Node_ComponentBoundEvent_1_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__ArrowRight_K2Node_ComponentBoundEvent_5_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__ArrowRight_K2Node_ComponentBoundEvent_5_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__ArrowRight_K2Node_ComponentBoundEvent_5_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__ArrowRight_K2Node_ComponentBoundEvent_5_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_2_OnNavigationDelegate__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// EUINavigation                  Direction                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_2_OnNavigationDelegate__DelegateSignature(EUINavigation Direction, class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_2_OnNavigationDelegate__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_2_OnNavigationDelegate__DelegateSignature_Params params;
+	params.Direction = Direction;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_0_OnAdvButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWidget*                 Widget                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::BndEvt__FocusButton_K2Node_ComponentBoundEvent_0_OnAdvButtonClickedEvent__DelegateSignature(class UWidget* Widget)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.BndEvt__FocusButton_K2Node_ComponentBoundEvent_0_OnAdvButtonClickedEvent__DelegateSignature");
+
+	UWidget_EnumUserSetting_C_BndEvt__FocusButton_K2Node_ComponentBoundEvent_0_OnAdvButtonClickedEvent__DelegateSignature_Params params;
+	params.Widget = Widget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.ExecuteUbergraph_Widget_EnumUserSetting
+// (Final)
+// Parameters:
+// int                            EntryPoint                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+void UWidget_EnumUserSetting_C::ExecuteUbergraph_Widget_EnumUserSetting(int EntryPoint)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Widget_EnumUserSetting.Widget_EnumUserSetting_C.ExecuteUbergraph_Widget_EnumUserSetting");
+
+	UWidget_EnumUserSetting_C_ExecuteUbergraph_Widget_EnumUserSetting_Params params;
+	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

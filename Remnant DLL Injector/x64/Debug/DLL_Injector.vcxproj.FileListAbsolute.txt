@@ -1,0 +1,4 @@
+C:\Users\Rory Glenn\source\repos\DLL_Injector\x64\Debug\DLL_Injector.exe
+C:\Users\Rory Glenn\source\repos\DLL_Injector\x64\Debug\DLL_Injector.pdb
+C:\Users\Rory Glenn\Desktop\LootSwitcher\Remnant DLL Injector\x64\Debug\DLL_Injector.exe
+C:\Users\Rory Glenn\Desktop\LootSwitcher\Remnant DLL Injector\x64\Debug\DLL_Injector.pdb

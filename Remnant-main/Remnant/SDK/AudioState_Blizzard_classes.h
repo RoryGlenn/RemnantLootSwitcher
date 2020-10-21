@@ -1,0 +1,40 @@
+#pragma once
+
+// Name: Remnant, Version: 6
+
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+/*!!HELPER_DEF!!*/
+
+/*!!DEFINE!!*/
+
+namespace UFT
+{
+//---------------------------------------------------------------------------
+// Classes
+//---------------------------------------------------------------------------
+
+// BlueprintGeneratedClass AudioState_Blizzard.AudioState_Blizzard_C
+// 0x0000 (FullSize[0x0028] - InheritedSize[0x0028])
+class UAudioState_Blizzard_C : public UAudioStateID
+{
+public:
+
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BlueprintGeneratedClass AudioState_Blizzard.AudioState_Blizzard_C");
+		return ptr;
+	}
+
+
+};
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif
