@@ -1,7 +1,7 @@
 #pragma once
 #pragma warning(disable: 4267)
 
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include <vector>
 #include <locale>
@@ -21,6 +21,7 @@
 namespace UFT
 {
 
+
 bool InitSdk(const std::string& moduleName, size_t gObjectsOffset, size_t gNamesOffset);
 bool InitSdk();
 
@@ -28,7 +29,7 @@ template<typename Fn>
 inline Fn GetVFunction(const void* instance, std::size_t index)
 {
 	auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
-	return reinterpret_cast<Fn>(vtable[index]);		// <------ COMMON ERROR HERE!!!!!!!!
+	return reinterpret_cast<Fn>(vtable[index]);
 }
 
 class UObject;
@@ -64,7 +65,6 @@ public:
 	{
 		return Data[i];
 	};
-
 
 	bool IsValidIndex(int i) const
 	{
@@ -124,7 +124,7 @@ public:
 	int Flags;
 	int32_t ClusterIndex;
 	int32_t SerialNumber;
-	unsigned char pad_24O51CD3O1[0x04];
+	unsigned char pad_EYU7ZVNGMU[0x04];
 	enum class ObjectFlags : int32_t
 	{
 		None = 0,
@@ -818,18 +818,9 @@ public:
 	}
 };
 
-struct FTextData
-{
-	char UnknownData[40]; //0x0000
-	wchar_t* Data; //0x0028
-	int32_t Length; //0x0030
-};
-
 struct FText
 {
-	FTextData* Data;
-	char UnknownData[16];
-	//char UnknownData[0x18];
+	char UnknownData[0x18];
 };
 
 struct FScriptDelegate
@@ -851,7 +842,7 @@ struct FStructBaseChain
 {
 	class FStructBaseChain** StructBaseChainArray;
 	int32_t NumStructBasesInChainMinusOne;
-	unsigned char pad_1HSQB32MWX[0x04];
+	unsigned char pad_QTLQWBWR9W[0x04];
 };
 
 template<typename Key, typename Value>

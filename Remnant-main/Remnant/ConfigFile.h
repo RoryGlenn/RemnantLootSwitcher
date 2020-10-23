@@ -9,18 +9,19 @@
 
 struct TypeLoadOut
 {
-	std::string loadOutName = "";
-	std::string handgun = "";
-	std::string LongGun = "";
-	std::string Melee = "";
-	std::string Helmet = "";
-	std::string Chest = "";
-	std::string Legs = "";
-	std::string Amulet = "";
-	std::string Ring1 = "";
-	std::string Ring2 = "";
+	std::string loadOutName = "New Loadout";
+	std::string handgun		= "";
+	std::string LongGun		= "";
+	std::string Melee		= "";
+	std::string Helmet		= "";
+	std::string Chest		= "";
+	std::string Legs		= "";
+	std::string Amulet		= "";
+	std::string Ring1		= "";
+	std::string Ring2		= "";
+	std::string keyText		= "UnBound";
 	int			KeyV;
-	bool		textEdit = false;
+	bool		textEdit;
 };
 
 class ConfigFile

@@ -1,6 +1,6 @@
 #pragma once
 
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -164,6 +164,215 @@ struct AAIController_ClaimTaskResource_Params
 	class UClass*                                      ResourceClass;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function AIModule.BTFunctionLibrary.StopUsingExternalEvent
+struct UBTFunctionLibrary_StopUsingExternalEvent_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.StartUsingExternalEvent
+struct UBTFunctionLibrary_StartUsingExternalEvent_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OwningActor;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsVector
+struct UBTFunctionLibrary_SetBlackboardValueAsVector_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVector                                     Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsString
+struct UBTFunctionLibrary_SetBlackboardValueAsString_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FString                                     Value;                                                     // (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsRotator
+struct UBTFunctionLibrary_SetBlackboardValueAsRotator_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FRotator                                    Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsObject
+struct UBTFunctionLibrary_SetBlackboardValueAsObject_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UObject*                                     Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsName
+struct UBTFunctionLibrary_SetBlackboardValueAsName_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FName                                       Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsInt
+struct UBTFunctionLibrary_SetBlackboardValueAsInt_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int                                                Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsFloat
+struct UBTFunctionLibrary_SetBlackboardValueAsFloat_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                              Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsEnum
+struct UBTFunctionLibrary_SetBlackboardValueAsEnum_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	unsigned char                                      Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsClass
+struct UBTFunctionLibrary_SetBlackboardValueAsClass_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UClass*                                      Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsBool
+struct UBTFunctionLibrary_SetBlackboardValueAsBool_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                               Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetOwnersBlackboard
+struct UBTFunctionLibrary_GetOwnersBlackboard_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBlackboardComponent*                        ReturnValue;                                               // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetOwnerComponent
+struct UBTFunctionLibrary_GetOwnerComponent_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBehaviorTreeComponent*                      ReturnValue;                                               // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsVector
+struct UBTFunctionLibrary_GetBlackboardValueAsVector_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVector                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsString
+struct UBTFunctionLibrary_GetBlackboardValueAsString_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FString                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsRotator
+struct UBTFunctionLibrary_GetBlackboardValueAsRotator_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FRotator                                    ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsObject
+struct UBTFunctionLibrary_GetBlackboardValueAsObject_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UObject*                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsName
+struct UBTFunctionLibrary_GetBlackboardValueAsName_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FName                                       ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsInt
+struct UBTFunctionLibrary_GetBlackboardValueAsInt_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsFloat
+struct UBTFunctionLibrary_GetBlackboardValueAsFloat_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsEnum
+struct UBTFunctionLibrary_GetBlackboardValueAsEnum_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	unsigned char                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsClass
+struct UBTFunctionLibrary_GetBlackboardValueAsClass_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UClass*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsBool
+struct UBTFunctionLibrary_GetBlackboardValueAsBool_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsActor
+struct UBTFunctionLibrary_GetBlackboardValueAsActor_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class AActor*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.ClearBlackboardValueAsVector
+struct UBTFunctionLibrary_ClearBlackboardValueAsVector_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTFunctionLibrary.ClearBlackboardValue
+struct UBTFunctionLibrary_ClearBlackboardValue_Params
+{
+	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
 // Function AIModule.PathFollowingComponent.OnNavDataRegistered
 struct UPathFollowingComponent_OnNavDataRegistered_Params
 {
@@ -198,35 +407,141 @@ struct UAIAsyncTaskBlueprintProxy_OnMoveCompleted_Params
 	TEnumAsByte<EPathFollowingResult>                  MovementResult;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
-struct ANavLinkProxy_SetSmartLinkEnabled_Params
+// Function AIModule.BTService_BlueprintBase.ReceiveTickAI
+struct UBTService_BlueprintBase_ReceiveTickAI_Params
 {
-	bool                                               bEnabled;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLinkProxy.ResumePathFollowing
-struct ANavLinkProxy_ResumePathFollowing_Params
+// Function AIModule.BTService_BlueprintBase.ReceiveTick
+struct UBTService_BlueprintBase_ReceiveTick_Params
 {
-	class AActor*                                      Agent;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
-struct ANavLinkProxy_ReceiveSmartLinkReached_Params
+// Function AIModule.BTService_BlueprintBase.ReceiveSearchStartAI
+struct UBTService_BlueprintBase_ReceiveSearchStartAI_Params
 {
-	class AActor*                                      Agent;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Destination;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
-struct ANavLinkProxy_IsSmartLinkEnabled_Params
+// Function AIModule.BTService_BlueprintBase.ReceiveSearchStart
+struct UBTService_BlueprintBase_ReceiveSearchStart_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTService_BlueprintBase.ReceiveDeactivationAI
+struct UBTService_BlueprintBase_ReceiveDeactivationAI_Params
+{
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTService_BlueprintBase.ReceiveDeactivation
+struct UBTService_BlueprintBase_ReceiveDeactivation_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTService_BlueprintBase.ReceiveActivationAI
+struct UBTService_BlueprintBase_ReceiveActivationAI_Params
+{
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTService_BlueprintBase.ReceiveActivation
+struct UBTService_BlueprintBase_ReceiveActivation_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTService_BlueprintBase.IsServiceActive
+struct UBTService_BlueprintBase_IsServiceActive_Params
 {
 	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLinkProxy.HasMovingAgents
-struct ANavLinkProxy_HasMovingAgents_Params
+// Function AIModule.BTTask_BlueprintBase.SetFinishOnMessageWithId
+struct UBTTask_BlueprintBase_SetFinishOnMessageWithId_Params
+{
+	struct FName                                       MessageName;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                RequestID;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.SetFinishOnMessage
+struct UBTTask_BlueprintBase_SetFinishOnMessage_Params
+{
+	struct FName                                       MessageName;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveTickAI
+struct UBTTask_BlueprintBase_ReceiveTickAI_Params
+{
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveTick
+struct UBTTask_BlueprintBase_ReceiveTick_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveExecuteAI
+struct UBTTask_BlueprintBase_ReceiveExecuteAI_Params
+{
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveExecute
+struct UBTTask_BlueprintBase_ReceiveExecute_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveAbortAI
+struct UBTTask_BlueprintBase_ReceiveAbortAI_Params
+{
+	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.ReceiveAbort
+struct UBTTask_BlueprintBase_ReceiveAbort_Params
+{
+	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.IsTaskExecuting
+struct UBTTask_BlueprintBase_IsTaskExecuting_Params
 {
 	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.IsTaskAborting
+struct UBTTask_BlueprintBase_IsTaskAborting_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.FinishExecute
+struct UBTTask_BlueprintBase_FinishExecute_Params
+{
+	bool                                               bSuccess;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.BTTask_BlueprintBase.FinishAbort
+struct UBTTask_BlueprintBase_FinishAbort_Params
+{
 };
 
 // Function AIModule.AIBlueprintHelperLibrary.UnlockAIResourcesWithAnimation
@@ -334,80 +649,6 @@ struct UAIBlueprintHelperLibrary_CreateMoveToProxyObject_Params
 	class UAIAsyncTaskBlueprintProxy*                  ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
-struct UNavLocalGridManager_SetLocalNavigationGridDensity_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              CellSize;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
-struct UNavLocalGridManager_RemoveLocalNavigationGrid_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                GridId;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
-struct UNavLocalGridManager_FindLocalNavigationGridPath_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Start;                                                     // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     End;                                                       // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                             PathPoints;                                                // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
-struct UNavLocalGridManager_AddLocalNavigationGridForPoints_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                             Locations;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
-struct UNavLocalGridManager_AddLocalNavigationGridForPoint_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
-struct UNavLocalGridManager_AddLocalNavigationGridForCapsule_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              CapsuleRadius;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              CapsuleHalfHeight;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
-struct UNavLocalGridManager_AddLocalNavigationGridForBox_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Extent;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                                    Rotation;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function AIModule.AIPerceptionComponent.SetSenseEnabled
 struct UAIPerceptionComponent_SetSenseEnabled_Params
 {
@@ -462,26 +703,6 @@ struct UAIPerceptionComponent_GetActorsPerception_Params
 	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.PawnAction.GetActionPriority
-struct UPawnAction_GetActionPriority_Params
-{
-	TEnumAsByte<EAIRequestPriority>                    ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction.Finish
-struct UPawnAction_Finish_Params
-{
-	TEnumAsByte<EPawnActionResult>                     WithResult;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction.CreateActionInstance
-struct UPawnAction_CreateActionInstance_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                      ActionClass;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPawnAction*                                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function AIModule.AIPerceptionStimuliSourceComponent.UnregisterFromSense
 struct UAIPerceptionStimuliSourceComponent_UnregisterFromSense_Params
 {
@@ -504,68 +725,10 @@ struct UAIPerceptionStimuliSourceComponent_RegisterForSense_Params
 	class UClass*                                      SenseClass;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.PawnAction_BlueprintBase.ActionTick
-struct UPawnAction_BlueprintBase_ActionTick_Params
+// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
+struct UCrowdFollowingComponent_SuspendCrowdSteering_Params
 {
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction_BlueprintBase.ActionStart
-struct UPawnAction_BlueprintBase_ActionStart_Params
-{
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction_BlueprintBase.ActionResume
-struct UPawnAction_BlueprintBase_ActionResume_Params
-{
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction_BlueprintBase.ActionPause
-struct UPawnAction_BlueprintBase_ActionPause_Params
-{
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnAction_BlueprintBase.ActionFinished
-struct UPawnAction_BlueprintBase_ActionFinished_Params
-{
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EPawnActionResult>                     WithResult;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnActionsComponent.K2_PushAction
-struct UPawnActionsComponent_K2_PushAction_Params
-{
-	class UPawnAction*                                 NewAction;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EAIRequestPriority>                    Priority;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                     Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnActionsComponent.K2_PerformAction
-struct UPawnActionsComponent_K2_PerformAction_Params
-{
-	class APawn*                                       Pawn;                                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPawnAction*                                 Action;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EAIRequestPriority>                    Priority;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
-struct UPawnActionsComponent_K2_ForceAbortAction_Params
-{
-	class UPawnAction*                                 ActionToAbort;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EPawnActionAbortState>                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnActionsComponent.K2_AbortAction
-struct UPawnActionsComponent_K2_AbortAction_Params
-{
-	class UPawnAction*                                 ActionToAbort;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EPawnActionAbortState>                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bSuspend;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function AIModule.AIPerceptionSystem.ReportPerceptionEvent
@@ -605,48 +768,36 @@ struct UAIPerceptionSystem_GetSenseClassForStimulus_Params
 	class UClass*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.PawnSensingComponent.SetSensingUpdatesEnabled
-struct UPawnSensingComponent_SetSensingUpdatesEnabled_Params
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleLocation
+struct UEnvQueryContext_BlueprintBase_ProvideSingleLocation_Params
 {
-	bool                                               bEnabled;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     ResultingLocation;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.PawnSensingComponent.SetSensingInterval
-struct UPawnSensingComponent_SetSensingInterval_Params
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleActor
+struct UEnvQueryContext_BlueprintBase_ProvideSingleActor_Params
 {
-	float                                              NewSensingInterval;                                        // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      ResultingActor;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.PawnSensingComponent.SetPeripheralVisionAngle
-struct UPawnSensingComponent_SetPeripheralVisionAngle_Params
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideLocationsSet
+struct UEnvQueryContext_BlueprintBase_ProvideLocationsSet_Params
 {
-	float                                              NewPeripheralVisionAngle;                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                             ResultingLocationSet;                                      // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
-// DelegateFunction AIModule.PawnSensingComponent.SeePawnDelegate__DelegateSignature
-struct UPawnSensingComponent_SeePawnDelegate__DelegateSignature_Params
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideActorsSet
+struct UEnvQueryContext_BlueprintBase_ProvideActorsSet_Params
 {
-	class APawn*                                       Pawn;                                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// DelegateFunction AIModule.PawnSensingComponent.HearNoiseDelegate__DelegateSignature
-struct UPawnSensingComponent_HearNoiseDelegate__DelegateSignature_Params
-{
-	class APawn*                                       Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Volume;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnSensingComponent.GetPeripheralVisionCosine
-struct UPawnSensingComponent_GetPeripheralVisionCosine_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.PawnSensingComponent.GetPeripheralVisionAngle
-struct UPawnSensingComponent_GetPeripheralVisionAngle_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                              ResultingActorsSet;                                        // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // Function AIModule.AISense_Blueprint.OnUpdate
@@ -706,6 +857,30 @@ struct UAISense_Damage_ReportDamageEvent_Params
 	struct FVector                                     HitLocation;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
+struct UEnvQueryGenerator_BlueprintBase_GetQuerier_Params
+{
+	class UObject*                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
+struct UEnvQueryGenerator_BlueprintBase_DoItemGeneration_Params
+{
+	TArray<struct FVector>                             ContextLocations;                                          // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
+struct UEnvQueryGenerator_BlueprintBase_AddGeneratedVector_Params
+{
+	struct FVector                                     GeneratedVector;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
+struct UEnvQueryGenerator_BlueprintBase_AddGeneratedActor_Params
+{
+	class AActor*                                      GeneratedActor;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function AIModule.AISense_Hearing.ReportNoiseEvent
 struct UAISense_Hearing_ReportNoiseEvent_Params
 {
@@ -743,6 +918,53 @@ struct UAISystem_AIIgnorePlayers_Params
 {
 };
 
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.SetNamedParam
+struct UEnvQueryInstanceBlueprintWrapper_SetNamedParam_Params
+{
+	struct FName                                       ParamName;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetResultsAsLocations
+struct UEnvQueryInstanceBlueprintWrapper_GetResultsAsLocations_Params
+{
+	TArray<struct FVector>                             ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetResultsAsActors
+struct UEnvQueryInstanceBlueprintWrapper_GetResultsAsActors_Params
+{
+	TArray<class AActor*>                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetQueryResultsAsLocations
+struct UEnvQueryInstanceBlueprintWrapper_GetQueryResultsAsLocations_Params
+{
+	TArray<struct FVector>                             ResultLocations;                                           // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetQueryResultsAsActors
+struct UEnvQueryInstanceBlueprintWrapper_GetQueryResultsAsActors_Params
+{
+	TArray<class AActor*>                              ResultActors;                                              // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetItemScore
+struct UEnvQueryInstanceBlueprintWrapper_GetItemScore_Params
+{
+	int                                                ItemIndex;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// DelegateFunction AIModule.EnvQueryInstanceBlueprintWrapper.EQSQueryDoneSignature__DelegateSignature
+struct UEnvQueryInstanceBlueprintWrapper_EQSQueryDoneSignature__DelegateSignature_Params
+{
+	class UEnvQueryInstanceBlueprintWrapper*           QueryInstance;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EEnvQueryStatus>                       QueryStatus;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function AIModule.AITask_MoveTo.AIMoveTo
 struct UAITask_MoveTo_AIMoveTo_Params
 {
@@ -764,6 +986,17 @@ struct UAITask_RunEQS_RunEQS_Params
 	class AAIController*                               Controller;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UEnvQuery*                                   QueryTemplate;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAITask_RunEQS*                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.EnvQueryManager.RunEQSQuery
+struct UEnvQueryManager_RunEQSQuery_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQuery*                                   QueryTemplate;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     Querier;                                                   // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EEnvQueryRunMode>                      RunMode;                                                   // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                      WrapperClass;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQueryInstanceBlueprintWrapper*           ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function AIModule.BrainComponent.StopLogic
@@ -980,6 +1213,163 @@ struct UBlackboardComponent_ClearValue_Params
 	struct FName                                       KeyName;                                                   // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
+struct ANavLinkProxy_SetSmartLinkEnabled_Params
+{
+	bool                                               bEnabled;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLinkProxy.ResumePathFollowing
+struct ANavLinkProxy_ResumePathFollowing_Params
+{
+	class AActor*                                      Agent;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
+struct ANavLinkProxy_ReceiveSmartLinkReached_Params
+{
+	class AActor*                                      Agent;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Destination;                                               // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
+struct ANavLinkProxy_IsSmartLinkEnabled_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLinkProxy.HasMovingAgents
+struct ANavLinkProxy_HasMovingAgents_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
+struct UNavLocalGridManager_SetLocalNavigationGridDensity_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              CellSize;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
+struct UNavLocalGridManager_RemoveLocalNavigationGrid_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                GridId;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
+struct UNavLocalGridManager_FindLocalNavigationGridPath_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Start;                                                     // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     End;                                                       // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                             PathPoints;                                                // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
+struct UNavLocalGridManager_AddLocalNavigationGridForPoints_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                             Locations;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
+struct UNavLocalGridManager_AddLocalNavigationGridForPoint_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
+struct UNavLocalGridManager_AddLocalNavigationGridForCapsule_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              CapsuleRadius;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              CapsuleHalfHeight;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
+struct UNavLocalGridManager_AddLocalNavigationGridForBox_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Extent;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                                    Rotation;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int                                                Radius2D;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Height;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bRebuildGrids;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction.GetActionPriority
+struct UPawnAction_GetActionPriority_Params
+{
+	TEnumAsByte<EAIRequestPriority>                    ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction.Finish
+struct UPawnAction_Finish_Params
+{
+	TEnumAsByte<EPawnActionResult>                     WithResult;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction.CreateActionInstance
+struct UPawnAction_CreateActionInstance_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                      ActionClass;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction_BlueprintBase.ActionTick
+struct UPawnAction_BlueprintBase_ActionTick_Params
+{
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction_BlueprintBase.ActionStart
+struct UPawnAction_BlueprintBase_ActionStart_Params
+{
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction_BlueprintBase.ActionResume
+struct UPawnAction_BlueprintBase_ActionResume_Params
+{
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction_BlueprintBase.ActionPause
+struct UPawnAction_BlueprintBase_ActionPause_Params
+{
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function AIModule.PawnAction_BlueprintBase.ActionFinished
+struct UPawnAction_BlueprintBase_ActionFinished_Params
+{
+	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EPawnActionResult>                     WithResult;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function AIModule.BTDecorator_BlueprintBase.ReceiveTickAI
 struct UBTDecorator_BlueprintBase_ReceiveTickAI_Params
 {
@@ -1076,470 +1466,80 @@ struct UBTDecorator_BlueprintBase_IsDecoratorExecutionActive_Params
 	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.StopUsingExternalEvent
-struct UBTFunctionLibrary_StopUsingExternalEvent_Params
+// Function AIModule.PawnActionsComponent.K2_PushAction
+struct UPawnActionsComponent_K2_PushAction_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                                 NewAction;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EAIRequestPriority>                    Priority;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                     Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.StartUsingExternalEvent
-struct UBTFunctionLibrary_StartUsingExternalEvent_Params
+// Function AIModule.PawnActionsComponent.K2_PerformAction
+struct UPawnActionsComponent_K2_PerformAction_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      OwningActor;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       Pawn;                                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                                 Action;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EAIRequestPriority>                    Priority;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsVector
-struct UBTFunctionLibrary_SetBlackboardValueAsVector_Params
+// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
+struct UPawnActionsComponent_K2_ForceAbortAction_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FVector                                     Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                                 ActionToAbort;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EPawnActionAbortState>                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsString
-struct UBTFunctionLibrary_SetBlackboardValueAsString_Params
+// Function AIModule.PawnActionsComponent.K2_AbortAction
+struct UPawnActionsComponent_K2_AbortAction_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FString                                     Value;                                                     // (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                                 ActionToAbort;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TEnumAsByte<EPawnActionAbortState>                 ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsRotator
-struct UBTFunctionLibrary_SetBlackboardValueAsRotator_Params
+// Function AIModule.PawnSensingComponent.SetSensingUpdatesEnabled
+struct UPawnSensingComponent_SetSensingUpdatesEnabled_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FRotator                                    Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                               bEnabled;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsObject
-struct UBTFunctionLibrary_SetBlackboardValueAsObject_Params
+// Function AIModule.PawnSensingComponent.SetSensingInterval
+struct UPawnSensingComponent_SetSensingInterval_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UObject*                                     Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              NewSensingInterval;                                        // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsName
-struct UBTFunctionLibrary_SetBlackboardValueAsName_Params
+// Function AIModule.PawnSensingComponent.SetPeripheralVisionAngle
+struct UPawnSensingComponent_SetPeripheralVisionAngle_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FName                                       Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              NewPeripheralVisionAngle;                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsInt
-struct UBTFunctionLibrary_SetBlackboardValueAsInt_Params
+// DelegateFunction AIModule.PawnSensingComponent.SeePawnDelegate__DelegateSignature
+struct UPawnSensingComponent_SeePawnDelegate__DelegateSignature_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int                                                Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       Pawn;                                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsFloat
-struct UBTFunctionLibrary_SetBlackboardValueAsFloat_Params
+// DelegateFunction AIModule.PawnSensingComponent.HearNoiseDelegate__DelegateSignature
+struct UPawnSensingComponent_HearNoiseDelegate__DelegateSignature_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	float                                              Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                       Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                     Location;                                                  // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              Volume;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsEnum
-struct UBTFunctionLibrary_SetBlackboardValueAsEnum_Params
+// Function AIModule.PawnSensingComponent.GetPeripheralVisionCosine
+struct UPawnSensingComponent_GetPeripheralVisionCosine_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	unsigned char                                      Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsClass
-struct UBTFunctionLibrary_SetBlackboardValueAsClass_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UClass*                                      Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.SetBlackboardValueAsBool
-struct UBTFunctionLibrary_SetBlackboardValueAsBool_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                               Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetOwnersBlackboard
-struct UBTFunctionLibrary_GetOwnersBlackboard_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBlackboardComponent*                        ReturnValue;                                               // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetOwnerComponent
-struct UBTFunctionLibrary_GetOwnerComponent_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBehaviorTreeComponent*                      ReturnValue;                                               // (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsVector
-struct UBTFunctionLibrary_GetBlackboardValueAsVector_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FVector                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsString
-struct UBTFunctionLibrary_GetBlackboardValueAsString_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FString                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsRotator
-struct UBTFunctionLibrary_GetBlackboardValueAsRotator_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FRotator                                    ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsObject
-struct UBTFunctionLibrary_GetBlackboardValueAsObject_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UObject*                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsName
-struct UBTFunctionLibrary_GetBlackboardValueAsName_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FName                                       ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsInt
-struct UBTFunctionLibrary_GetBlackboardValueAsInt_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsFloat
-struct UBTFunctionLibrary_GetBlackboardValueAsFloat_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsEnum
-struct UBTFunctionLibrary_GetBlackboardValueAsEnum_Params
+// Function AIModule.PawnSensingComponent.GetPeripheralVisionAngle
+struct UPawnSensingComponent_GetPeripheralVisionAngle_Params
 {
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	unsigned char                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsClass
-struct UBTFunctionLibrary_GetBlackboardValueAsClass_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UClass*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsBool
-struct UBTFunctionLibrary_GetBlackboardValueAsBool_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.GetBlackboardValueAsActor
-struct UBTFunctionLibrary_GetBlackboardValueAsActor_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class AActor*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.ClearBlackboardValueAsVector
-struct UBTFunctionLibrary_ClearBlackboardValueAsVector_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTFunctionLibrary.ClearBlackboardValue
-struct UBTFunctionLibrary_ClearBlackboardValue_Params
-{
-	class UBTNode*                                     NodeOwner;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                      Key;                                                       // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveTickAI
-struct UBTService_BlueprintBase_ReceiveTickAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveTick
-struct UBTService_BlueprintBase_ReceiveTick_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveSearchStartAI
-struct UBTService_BlueprintBase_ReceiveSearchStartAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveSearchStart
-struct UBTService_BlueprintBase_ReceiveSearchStart_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveDeactivationAI
-struct UBTService_BlueprintBase_ReceiveDeactivationAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveDeactivation
-struct UBTService_BlueprintBase_ReceiveDeactivation_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveActivationAI
-struct UBTService_BlueprintBase_ReceiveActivationAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.ReceiveActivation
-struct UBTService_BlueprintBase_ReceiveActivation_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTService_BlueprintBase.IsServiceActive
-struct UBTService_BlueprintBase_IsServiceActive_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.SetFinishOnMessageWithId
-struct UBTTask_BlueprintBase_SetFinishOnMessageWithId_Params
-{
-	struct FName                                       MessageName;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                RequestID;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.SetFinishOnMessage
-struct UBTTask_BlueprintBase_SetFinishOnMessage_Params
-{
-	struct FName                                       MessageName;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveTickAI
-struct UBTTask_BlueprintBase_ReceiveTickAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveTick
-struct UBTTask_BlueprintBase_ReceiveTick_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DeltaSeconds;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveExecuteAI
-struct UBTTask_BlueprintBase_ReceiveExecuteAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveExecute
-struct UBTTask_BlueprintBase_ReceiveExecute_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveAbortAI
-struct UBTTask_BlueprintBase_ReceiveAbortAI_Params
-{
-	class AAIController*                               OwnerController;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                       ControlledPawn;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.ReceiveAbort
-struct UBTTask_BlueprintBase_ReceiveAbort_Params
-{
-	class AActor*                                      OwnerActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.IsTaskExecuting
-struct UBTTask_BlueprintBase_IsTaskExecuting_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.IsTaskAborting
-struct UBTTask_BlueprintBase_IsTaskAborting_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.FinishExecute
-struct UBTTask_BlueprintBase_FinishExecute_Params
-{
-	bool                                               bSuccess;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.BTTask_BlueprintBase.FinishAbort
-struct UBTTask_BlueprintBase_FinishAbort_Params
-{
-};
-
-// Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
-struct UCrowdFollowingComponent_SuspendCrowdSteering_Params
-{
-	bool                                               bSuspend;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleLocation
-struct UEnvQueryContext_BlueprintBase_ProvideSingleLocation_Params
-{
-	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                     ResultingLocation;                                         // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleActor
-struct UEnvQueryContext_BlueprintBase_ProvideSingleActor_Params
-{
-	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      ResultingActor;                                            // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideLocationsSet
-struct UEnvQueryContext_BlueprintBase_ProvideLocationsSet_Params
-{
-	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                             ResultingLocationSet;                                      // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideActorsSet
-struct UEnvQueryContext_BlueprintBase_ProvideActorsSet_Params
-{
-	class UObject*                                     QuerierObject;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      QuerierActor;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AActor*>                              ResultingActorsSet;                                        // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
-struct UEnvQueryGenerator_BlueprintBase_GetQuerier_Params
-{
-	class UObject*                                     ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
-struct UEnvQueryGenerator_BlueprintBase_DoItemGeneration_Params
-{
-	TArray<struct FVector>                             ContextLocations;                                          // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
-struct UEnvQueryGenerator_BlueprintBase_AddGeneratedVector_Params
-{
-	struct FVector                                     GeneratedVector;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
-struct UEnvQueryGenerator_BlueprintBase_AddGeneratedActor_Params
-{
-	class AActor*                                      GeneratedActor;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.SetNamedParam
-struct UEnvQueryInstanceBlueprintWrapper_SetNamedParam_Params
-{
-	struct FName                                       ParamName;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              Value;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetResultsAsLocations
-struct UEnvQueryInstanceBlueprintWrapper_GetResultsAsLocations_Params
-{
-	TArray<struct FVector>                             ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetResultsAsActors
-struct UEnvQueryInstanceBlueprintWrapper_GetResultsAsActors_Params
-{
-	TArray<class AActor*>                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetQueryResultsAsLocations
-struct UEnvQueryInstanceBlueprintWrapper_GetQueryResultsAsLocations_Params
-{
-	TArray<struct FVector>                             ResultLocations;                                           // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetQueryResultsAsActors
-struct UEnvQueryInstanceBlueprintWrapper_GetQueryResultsAsActors_Params
-{
-	TArray<class AActor*>                              ResultActors;                                              // (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryInstanceBlueprintWrapper.GetItemScore
-struct UEnvQueryInstanceBlueprintWrapper_GetItemScore_Params
-{
-	int                                                ItemIndex;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// DelegateFunction AIModule.EnvQueryInstanceBlueprintWrapper.EQSQueryDoneSignature__DelegateSignature
-struct UEnvQueryInstanceBlueprintWrapper_EQSQueryDoneSignature__DelegateSignature_Params
-{
-	class UEnvQueryInstanceBlueprintWrapper*           QueryInstance;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EEnvQueryStatus>                       QueryStatus;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function AIModule.EnvQueryManager.RunEQSQuery
-struct UEnvQueryManager_RunEQSQuery_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQuery*                                   QueryTemplate;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                     Querier;                                                   // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TEnumAsByte<EEnvQueryRunMode>                      RunMode;                                                   // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                      WrapperClass;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQueryInstanceBlueprintWrapper*           ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }

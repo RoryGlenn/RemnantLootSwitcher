@@ -1,6 +1,4 @@
-// Name: Remnant, Version: 6
-
-#include <iostream>
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -58,39 +56,6 @@ std::string UObject::GetFullName() const
 
 bool UObject::IsA(UClass* cmp) const
 {
-	//std::cout << "0\n";
-	//UFT::UClass* super = nullptr;
-	//std::cout << "1\n";
-	//
-	//if(Class) // <----------------------- ERROR
-	//{
-	//	std::cout << "2\n";
-	//	super = Class; // <-------------- ERROR
-	//	std::cout << "3\n";
-	//}
-
-	//for(;;)
-	//{
-	//	if(!super)
-	//	{
-	//		std::cout << "4\n";
-	//		break;
-	//	}
-	//	
-	//	if(super == cmp)
-	//	{
-	//		std::cout << "5\n";
-	//		return true;
-	//	}
-
-	//	std::cout << "6\n";
-	//	super = static_cast<UClass*>(super->SuperField);
-	//	std::cout << "7\n";
-	//}
-
-	//std::cout << "8\n";
-	//return false;
-	
 	for (auto super = Class; super; super = static_cast<UClass*>(super->SuperField))
 	{
 		if (super == cmp)
@@ -100,7 +65,6 @@ bool UObject::IsA(UClass* cmp) const
 	}
 
 	return false;
-	
 }
 
 // Function CoreUObject.Object.ExecuteUbergraph

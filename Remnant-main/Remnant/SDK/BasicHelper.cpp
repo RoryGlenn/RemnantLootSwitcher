@@ -1,4 +1,4 @@
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 #include <iostream>
@@ -34,7 +34,7 @@ bool InitSdk(const std::string& moduleName, const size_t gObjectsOffset, const s
 }
 bool InitSdk()
 {
-	return InitSdk("Remnant-Win64-Shipping.exe", 0x34AB458, 0x34A7148);
+	return InitSdk("Remnant-Win64-Shipping.exe", 0x34B2B58, 0x34AE848);
 }
 //---------------------------------------------------------------------------
 #ifdef UE4

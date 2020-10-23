@@ -1,4 +1,4 @@
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -15,6 +15,232 @@ namespace UFT
 //---------------------------------------------------------------------------
 // Functions
 //---------------------------------------------------------------------------
+
+// Function GunfireRuntime.WaterFXComponent.IsInWater
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+bool UWaterFXComponent::IsInWater()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.IsInWater");
+
+	UWaterFXComponent_IsInWater_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+class UClass* UWaterFXComponent::GetWaterType()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterType");
+
+	UWaterFXComponent_GetWaterType_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterLevel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+float UWaterFXComponent::GetWaterLevel()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterLevel");
+
+	UWaterFXComponent_GetWaterLevel_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterDepth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+float UWaterFXComponent::GetWaterDepth()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterDepth");
+
+	UWaterFXComponent_GetWaterDepth_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+float UWaterFXComponent::GetSubmergeDepth()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth");
+
+	UWaterFXComponent_GetSubmergeDepth_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class AActor*                  OverlappedActor                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWaterOverlapComponent::OnEndOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap");
+
+	UWaterOverlapComponent_OnEndOverlap_Params params;
+	params.OverlappedActor = OverlappedActor;
+	params.OtherActor = OtherActor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWaterOverlapComponent::OnEndComponentOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap");
+
+	UWaterOverlapComponent_OnEndComponentOverlap_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap
+// (Final, Native, Protected)
+// Parameters:
+// class AActor*                  OverlappedActor                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWaterOverlapComponent::OnBeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap");
+
+	UWaterOverlapComponent_OnBeginOverlap_Params params;
+	params.OverlappedActor = OverlappedActor;
+	params.OtherActor = OtherActor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap
+// (Final, Native, Protected, HasOutParms)
+// Parameters:
+// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           bFromSweep                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FHitResult              SweepResult                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+void UWaterOverlapComponent::OnBeginComponentOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap");
+
+	UWaterOverlapComponent_OnBeginComponentOverlap_Params params;
+	params.OverlappedComponent = OverlappedComponent;
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+	params.bFromSweep = bFromSweep;
+	params.SweepResult = SweepResult;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WaterOverlapComponent.InWater
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+bool UWaterOverlapComponent::InWater()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.InWater");
+
+	UWaterOverlapComponent_InWater_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
 
 // Function GunfireRuntime.ActorModifier.SetOwner
 // (Final, Native, Public, BlueprintCallable)
@@ -576,6 +802,117 @@ void UActorModifier::ComputeDerivedStats()
 }
 
 
+// Function GunfireRuntime.AnimActorState.UpdateMovementParams
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UStateMachineComponent*  StateMachine                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UAnimActorState::UpdateMovementParams(class UStateMachineComponent* StateMachine)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.AnimActorState.UpdateMovementParams");
+
+	UAnimActorState_UpdateMovementParams_Params params;
+	params.StateMachine = StateMachine;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponComponent.NotifyHitTarget
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FDamageInfo             DamageInfo                     (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+void UWeaponComponent::NotifyHitTarget(const struct FDamageInfo& DamageInfo)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.NotifyHitTarget");
+
+	UWeaponComponent_NotifyHitTarget_Params params;
+	params.DamageInfo = DamageInfo;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponComponent.ModifyInspectInfo
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInspectInfo            In                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FInspectInfo            Out                            (Parm, OutParm, NativeAccessSpecifierPublic)
+void UWeaponComponent::ModifyInspectInfo(class AActor* Actor, const struct FInspectInfo& In, struct FInspectInfo* Out)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ModifyInspectInfo");
+
+	UWeaponComponent_ModifyInspectInfo_Params params;
+	params.Actor = Actor;
+	params.In = In;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+	if (Out != nullptr)
+		*Out = params.Out;
+
+}
+
+
+// Function GunfireRuntime.WeaponComponent.ModifyDamage
+// (Native, Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FDamageInfo             Info                           (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                           Rtn                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponComponent::ModifyDamage(struct FDamageInfo* Info, bool* Rtn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ModifyDamage");
+
+	UWeaponComponent_ModifyDamage_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+	if (Info != nullptr)
+		*Info = params.Info;
+	if (Rtn != nullptr)
+		*Rtn = params.Rtn;
+
+}
+
+
+// Function GunfireRuntime.WeaponComponent.ComputeStats
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class UStatsComponent*         Stats                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponComponent::ComputeStats(class UStatsComponent* Stats)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ComputeStats");
+
+	UWeaponComponent_ComputeStats_Params params;
+	params.Stats = Stats;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
 // Function GunfireRuntime.ActionBase.SetCause
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -933,6 +1270,27 @@ bool UActionBase::AllowAction(class UClass* ActionBP, const struct FDamageInfo& 
 	UActionBase_AllowAction_Params params;
 	params.ActionBP = ActionBP;
 	params.InDamageInfo = InDamageInfo;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+float UWeaponAffinityComponent::ComputeScalar()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar");
+
+	UWeaponAffinityComponent_ComputeScalar_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x00000400;
@@ -1304,6 +1662,460 @@ void AItem::Bounce()
 	UObject::ProcessEvent(fn, &params);
 	fn->FunctionFlags = flags;
 
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponPhantomComponent::StopWeaponPhantom(class UShapeComponent* Shape)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom");
+
+	UWeaponPhantomComponent_StopWeaponPhantom_Params params;
+	params.Shape = Shape;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms
+// (Final, Native, Public, BlueprintCallable)
+void UWeaponPhantomComponent::StopAllWeaponPhantoms()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms");
+
+	UWeaponPhantomComponent_StopAllWeaponPhantoms_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  Cause                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                  DamageType                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                  ImpactDirection                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                  ImpactEffect                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FName                   EffectBone                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEffectSpawnDirection          EffectSpawnDirection           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator                EffectOrientation              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float                          DamageMod                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                          DamageScalar                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           Blockable                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           Evadable                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int                            PowerOverride                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                          HitCooldown                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponPhantomComponent::StartWeaponPhantom(class UShapeComponent* Shape, class AActor* Cause, class UClass* DamageType, class UClass* ImpactDirection, class UClass* ImpactEffect, const struct FName& EffectBone, EEffectSpawnDirection EffectSpawnDirection, const struct FRotator& EffectOrientation, float DamageMod, float DamageScalar, bool Blockable, bool Evadable, int PowerOverride, float HitCooldown)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom");
+
+	UWeaponPhantomComponent_StartWeaponPhantom_Params params;
+	params.Shape = Shape;
+	params.Cause = Cause;
+	params.DamageType = DamageType;
+	params.ImpactDirection = ImpactDirection;
+	params.ImpactEffect = ImpactEffect;
+	params.EffectBone = EffectBone;
+	params.EffectSpawnDirection = EffectSpawnDirection;
+	params.EffectOrientation = EffectOrientation;
+	params.DamageMod = DamageMod;
+	params.DamageScalar = DamageScalar;
+	params.Blockable = Blockable;
+	params.Evadable = Evadable;
+	params.PowerOverride = PowerOverride;
+	params.HitCooldown = HitCooldown;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.SetSuspended
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           bIsSuspended                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponPhantomComponent::SetSuspended(bool bIsSuspended)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.SetSuspended");
+
+	UWeaponPhantomComponent_SetSuspended_Params params;
+	params.bIsSuspended = bIsSuspended;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWeaponPhantomComponent::MarkActorHit(class UObject* WorldContextObject, class UShapeComponent* Shape, class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit");
+
+	UWeaponPhantomComponent_MarkActorHit_Params params;
+	params.WorldContextObject = WorldContextObject;
+	params.Shape = Shape;
+	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.IsSuspended
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+bool UWeaponPhantomComponent::IsSuspended()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.IsSuspended");
+
+	UWeaponPhantomComponent_IsSuspended_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+bool UWeaponPhantomComponent::HasRecentlyHitActor(class UObject* WorldContextObject, class UShapeComponent* Shape, class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor");
+
+	UWeaponPhantomComponent_HasRecentlyHitActor_Params params;
+	params.WorldContextObject = WorldContextObject;
+	params.Shape = Shape;
+	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AActor*>          IgnoredActors                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                           bIgnoreDeadActors              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+bool UWeaponPhantomComponent::HasAnyOverlappingDamageable(TArray<class AActor*> IgnoredActors, bool bIgnoreDeadActors)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable");
+
+	UWeaponPhantomComponent_HasAnyOverlappingDamageable_Params params;
+	params.IgnoredActors = IgnoredActors;
+	params.bIgnoreDeadActors = bIgnoreDeadActors;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.WorldSoundComponent.SetAudioList
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// TArray<struct FWorldSound>     NewAudioList                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                           bReset                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWorldSoundComponent::SetAudioList(TArray<struct FWorldSound> NewAudioList, bool bReset)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WorldSoundComponent.SetAudioList");
+
+	UWorldSoundComponent_SetAudioList_Params params;
+	params.NewAudioList = NewAudioList;
+	params.bReset = bReset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WorldSoundComponent.ResetTimers
+// (Final, Native, Public, BlueprintCallable)
+void UWorldSoundComponent::ResetTimers()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WorldSoundComponent.ResetTimers");
+
+	UWorldSoundComponent_ResetTimers_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.StopReviveActor
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+void UWoundedComponent::StopReviveActor()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.StopReviveActor");
+
+	UWoundedComponent_StopReviveActor_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.ServerKillSelf
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+void UWoundedComponent::ServerKillSelf()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.ServerKillSelf");
+
+	UWoundedComponent_ServerKillSelf_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.ReviveActor
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+// Parameters:
+// class AActor*                  Target                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWoundedComponent::ReviveActor(class AActor* Target)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.ReviveActor");
+
+	UWoundedComponent_ReviveActor_Params params;
+	params.Target = Target;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.Revive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          HealthMultiplier               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                           SelfRevive                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWoundedComponent::Revive(float HealthMultiplier, bool SelfRevive)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.Revive");
+
+	UWoundedComponent_Revive_Params params;
+	params.HealthMultiplier = HealthMultiplier;
+	params.SelfRevive = SelfRevive;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.OnRep_State
+// (Final, Native, Protected)
+void UWoundedComponent::OnRep_State()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.OnRep_State");
+
+	UWoundedComponent_OnRep_State_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.OnCinematicPlaying
+// (Final, Native, Public)
+// Parameters:
+// struct FSequencerPlayerSettings Settings                       (Parm, NativeAccessSpecifierPublic)
+// class ULevelSequence*          CurrentSequence                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                  Instigator                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWoundedComponent::OnCinematicPlaying(const struct FSequencerPlayerSettings& Settings, class ULevelSequence* CurrentSequence, class AActor* Instigator)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.OnCinematicPlaying");
+
+	UWoundedComponent_OnCinematicPlaying_Params params;
+	params.Settings = Settings;
+	params.CurrentSequence = CurrentSequence;
+	params.Instigator = Instigator;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnWounded
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// struct FDamageInfo             Damage                         (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+void UWoundedComponent::MulticastOnWounded(const struct FDamageInfo& Damage)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnWounded");
+
+	UWoundedComponent_MulticastOnWounded_Params params;
+	params.Damage = Damage;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// class UWoundedComponent*       WoundedComponent               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWoundedComponent::MulticastOnTargetRevived(class UWoundedComponent* WoundedComponent)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived");
+
+	UWoundedComponent_MulticastOnTargetRevived_Params params;
+	params.WoundedComponent = WoundedComponent;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnRevived
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// bool                           bSelfRevive                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void UWoundedComponent::MulticastOnRevived(bool bSelfRevive)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnRevived");
+
+	UWoundedComponent_MulticastOnRevived_Params params;
+	params.bSelfRevive = bSelfRevive;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.Kill
+// (Final, Native, Public, BlueprintCallable)
+void UWoundedComponent::Kill()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.Kill");
+
+	UWoundedComponent_Kill_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+float UWoundedComponent::GetWoundedHealthPct()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct");
+
+	UWoundedComponent_GetWoundedHealthPct_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
 }
 
 
@@ -3038,6 +3850,40 @@ void UTraitsComponent::OnRep_Traits()
 	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.TraitsComponent.OnRep_Traits");
 
 	UTraitsComponent_OnRep_Traits_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.TraitsComponent.OnRep_TraitPointsSpent
+// (Native, Protected)
+void UTraitsComponent::OnRep_TraitPointsSpent()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.TraitsComponent.OnRep_TraitPointsSpent");
+
+	UTraitsComponent_OnRep_TraitPointsSpent_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function GunfireRuntime.TraitsComponent.OnRep_TraitPoints
+// (Native, Protected)
+void UTraitsComponent::OnRep_TraitPoints()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.TraitsComponent.OnRep_TraitPoints");
+
+	UTraitsComponent_OnRep_TraitPoints_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x00000400;
@@ -12019,7 +12865,7 @@ void UInventoryComponent::PutItemByID(class AActor* OtherActor, int ItemID, int 
 
 
 // Function GunfireRuntime.InventoryComponent.PickupItem
-// (Final, Native, Public, BlueprintCallable)
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // class AItem*                   Item                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 void UInventoryComponent::PickupItem(class AItem* Item)
@@ -17869,26 +18715,6 @@ void UAIDirector::ClearAllGroups(bool DestroyActiveSpawns)
 
 	UAIDirector_ClearAllGroups_Params params;
 	params.DestroyActiveSpawns = DestroyActiveSpawns;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.AnimActorState.UpdateMovementParams
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UStateMachineComponent*  StateMachine                   (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UAnimActorState::UpdateMovementParams(class UStateMachineComponent* StateMachine)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.AnimActorState.UpdateMovementParams");
-
-	UAnimActorState_UpdateMovementParams_Params params;
-	params.StateMachine = StateMachine;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x00000400;
@@ -29518,6 +30344,28 @@ class APlayerController* UGameUtil::STATIC_GetPlayerControllerForActor(class AAc
 
 	UGameUtil_GetPlayerControllerForActor_Params params;
 	params.Actor = Actor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject<UGameUtil>();
+	defaultObj->ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+
+	return params.ReturnValue;
+}
+
+
+// Function GunfireRuntime.GameUtil.GetPlatformSubType
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// EPlatform                      ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+EPlatform UGameUtil::STATIC_GetPlatformSubType()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.GameUtil.GetPlatformSubType");
+
+	UGameUtil_GetPlatformSubType_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x00000400;
@@ -43597,798 +44445,6 @@ void UVitalityComponent::ApplyDelta(float Delta)
 	UObject::ProcessEvent(fn, &params);
 	fn->FunctionFlags = flags;
 
-}
-
-
-// Function GunfireRuntime.WaterFXComponent.IsInWater
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-bool UWaterFXComponent::IsInWater()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.IsInWater");
-
-	UWaterFXComponent_IsInWater_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-class UClass* UWaterFXComponent::GetWaterType()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterType");
-
-	UWaterFXComponent_GetWaterType_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterLevel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-float UWaterFXComponent::GetWaterLevel()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterLevel");
-
-	UWaterFXComponent_GetWaterLevel_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterDepth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-float UWaterFXComponent::GetWaterDepth()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetWaterDepth");
-
-	UWaterFXComponent_GetWaterDepth_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-float UWaterFXComponent::GetSubmergeDepth()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth");
-
-	UWaterFXComponent_GetSubmergeDepth_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap
-// (Final, Native, Protected)
-// Parameters:
-// class AActor*                  OverlappedActor                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWaterOverlapComponent::OnEndOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap");
-
-	UWaterOverlapComponent_OnEndOverlap_Params params;
-	params.OverlappedActor = OverlappedActor;
-	params.OtherActor = OtherActor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap
-// (Final, Native, Protected)
-// Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWaterOverlapComponent::OnEndComponentOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap");
-
-	UWaterOverlapComponent_OnEndComponentOverlap_Params params;
-	params.OverlappedComponent = OverlappedComponent;
-	params.OtherActor = OtherActor;
-	params.OtherComp = OtherComp;
-	params.OtherBodyIndex = OtherBodyIndex;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap
-// (Final, Native, Protected)
-// Parameters:
-// class AActor*                  OverlappedActor                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWaterOverlapComponent::OnBeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap");
-
-	UWaterOverlapComponent_OnBeginOverlap_Params params;
-	params.OverlappedActor = OverlappedActor;
-	params.OtherActor = OtherActor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap
-// (Final, Native, Protected, HasOutParms)
-// Parameters:
-// class UPrimitiveComponent*     OverlappedComponent            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           bFromSweep                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult              SweepResult                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-void UWaterOverlapComponent::OnBeginComponentOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap");
-
-	UWaterOverlapComponent_OnBeginComponentOverlap_Params params;
-	params.OverlappedComponent = OverlappedComponent;
-	params.OtherActor = OtherActor;
-	params.OtherComp = OtherComp;
-	params.OtherBodyIndex = OtherBodyIndex;
-	params.bFromSweep = bFromSweep;
-	params.SweepResult = SweepResult;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WaterOverlapComponent.InWater
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-bool UWaterOverlapComponent::InWater()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WaterOverlapComponent.InWater");
-
-	UWaterOverlapComponent_InWater_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WeaponComponent.NotifyHitTarget
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FDamageInfo             DamageInfo                     (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-void UWeaponComponent::NotifyHitTarget(const struct FDamageInfo& DamageInfo)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.NotifyHitTarget");
-
-	UWeaponComponent_NotifyHitTarget_Params params;
-	params.DamageInfo = DamageInfo;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponComponent.ModifyInspectInfo
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInspectInfo            In                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FInspectInfo            Out                            (Parm, OutParm, NativeAccessSpecifierPublic)
-void UWeaponComponent::ModifyInspectInfo(class AActor* Actor, const struct FInspectInfo& In, struct FInspectInfo* Out)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ModifyInspectInfo");
-
-	UWeaponComponent_ModifyInspectInfo_Params params;
-	params.Actor = Actor;
-	params.In = In;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-	if (Out != nullptr)
-		*Out = params.Out;
-
-}
-
-
-// Function GunfireRuntime.WeaponComponent.ModifyDamage
-// (Native, Event, Public, HasOutParms, BlueprintEvent)
-// Parameters:
-// struct FDamageInfo             Info                           (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                           Rtn                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponComponent::ModifyDamage(struct FDamageInfo* Info, bool* Rtn)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ModifyDamage");
-
-	UWeaponComponent_ModifyDamage_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-	if (Info != nullptr)
-		*Info = params.Info;
-	if (Rtn != nullptr)
-		*Rtn = params.Rtn;
-
-}
-
-
-// Function GunfireRuntime.WeaponComponent.ComputeStats
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class UStatsComponent*         Stats                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponComponent::ComputeStats(class UStatsComponent* Stats)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponComponent.ComputeStats");
-
-	UWeaponComponent_ComputeStats_Params params;
-	params.Stats = Stats;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-float UWeaponAffinityComponent::ComputeScalar()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar");
-
-	UWeaponAffinityComponent_ComputeScalar_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponPhantomComponent::StopWeaponPhantom(class UShapeComponent* Shape)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom");
-
-	UWeaponPhantomComponent_StopWeaponPhantom_Params params;
-	params.Shape = Shape;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms
-// (Final, Native, Public, BlueprintCallable)
-void UWeaponPhantomComponent::StopAllWeaponPhantoms()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms");
-
-	UWeaponPhantomComponent_StopAllWeaponPhantoms_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  Cause                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                  DamageType                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                  ImpactDirection                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                  ImpactEffect                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FName                   EffectBone                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEffectSpawnDirection          EffectSpawnDirection           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                EffectOrientation              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                          DamageMod                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                          DamageScalar                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           Blockable                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           Evadable                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int                            PowerOverride                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                          HitCooldown                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponPhantomComponent::StartWeaponPhantom(class UShapeComponent* Shape, class AActor* Cause, class UClass* DamageType, class UClass* ImpactDirection, class UClass* ImpactEffect, const struct FName& EffectBone, EEffectSpawnDirection EffectSpawnDirection, const struct FRotator& EffectOrientation, float DamageMod, float DamageScalar, bool Blockable, bool Evadable, int PowerOverride, float HitCooldown)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom");
-
-	UWeaponPhantomComponent_StartWeaponPhantom_Params params;
-	params.Shape = Shape;
-	params.Cause = Cause;
-	params.DamageType = DamageType;
-	params.ImpactDirection = ImpactDirection;
-	params.ImpactEffect = ImpactEffect;
-	params.EffectBone = EffectBone;
-	params.EffectSpawnDirection = EffectSpawnDirection;
-	params.EffectOrientation = EffectOrientation;
-	params.DamageMod = DamageMod;
-	params.DamageScalar = DamageScalar;
-	params.Blockable = Blockable;
-	params.Evadable = Evadable;
-	params.PowerOverride = PowerOverride;
-	params.HitCooldown = HitCooldown;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.SetSuspended
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           bIsSuspended                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponPhantomComponent::SetSuspended(bool bIsSuspended)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.SetSuspended");
-
-	UWeaponPhantomComponent_SetSuspended_Params params;
-	params.bIsSuspended = bIsSuspended;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWeaponPhantomComponent::MarkActorHit(class UObject* WorldContextObject, class UShapeComponent* Shape, class AActor* Actor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit");
-
-	UWeaponPhantomComponent_MarkActorHit_Params params;
-	params.WorldContextObject = WorldContextObject;
-	params.Shape = Shape;
-	params.Actor = Actor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.IsSuspended
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-bool UWeaponPhantomComponent::IsSuspended()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.IsSuspended");
-
-	UWeaponPhantomComponent_IsSuspended_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UShapeComponent*         Shape                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-bool UWeaponPhantomComponent::HasRecentlyHitActor(class UObject* WorldContextObject, class UShapeComponent* Shape, class AActor* Actor)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor");
-
-	UWeaponPhantomComponent_HasRecentlyHitActor_Params params;
-	params.WorldContextObject = WorldContextObject;
-	params.Shape = Shape;
-	params.Actor = Actor;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AActor*>          IgnoredActors                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                           bIgnoreDeadActors              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-bool UWeaponPhantomComponent::HasAnyOverlappingDamageable(TArray<class AActor*> IgnoredActors, bool bIgnoreDeadActors)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable");
-
-	UWeaponPhantomComponent_HasAnyOverlappingDamageable_Params params;
-	params.IgnoredActors = IgnoredActors;
-	params.bIgnoreDeadActors = bIgnoreDeadActors;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
-}
-
-
-// Function GunfireRuntime.WorldSoundComponent.SetAudioList
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FWorldSound>     NewAudioList                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                           bReset                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWorldSoundComponent::SetAudioList(TArray<struct FWorldSound> NewAudioList, bool bReset)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WorldSoundComponent.SetAudioList");
-
-	UWorldSoundComponent_SetAudioList_Params params;
-	params.NewAudioList = NewAudioList;
-	params.bReset = bReset;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WorldSoundComponent.ResetTimers
-// (Final, Native, Public, BlueprintCallable)
-void UWorldSoundComponent::ResetTimers()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WorldSoundComponent.ResetTimers");
-
-	UWorldSoundComponent_ResetTimers_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.StopReviveActor
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
-void UWoundedComponent::StopReviveActor()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.StopReviveActor");
-
-	UWoundedComponent_StopReviveActor_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.ServerKillSelf
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
-void UWoundedComponent::ServerKillSelf()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.ServerKillSelf");
-
-	UWoundedComponent_ServerKillSelf_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.ReviveActor
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
-// Parameters:
-// class AActor*                  Target                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWoundedComponent::ReviveActor(class AActor* Target)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.ReviveActor");
-
-	UWoundedComponent_ReviveActor_Params params;
-	params.Target = Target;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.Revive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          HealthMultiplier               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                           SelfRevive                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWoundedComponent::Revive(float HealthMultiplier, bool SelfRevive)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.Revive");
-
-	UWoundedComponent_Revive_Params params;
-	params.HealthMultiplier = HealthMultiplier;
-	params.SelfRevive = SelfRevive;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.OnRep_State
-// (Final, Native, Protected)
-void UWoundedComponent::OnRep_State()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.OnRep_State");
-
-	UWoundedComponent_OnRep_State_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.OnCinematicPlaying
-// (Final, Native, Public)
-// Parameters:
-// struct FSequencerPlayerSettings Settings                       (Parm, NativeAccessSpecifierPublic)
-// class ULevelSequence*          CurrentSequence                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                  Instigator                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWoundedComponent::OnCinematicPlaying(const struct FSequencerPlayerSettings& Settings, class ULevelSequence* CurrentSequence, class AActor* Instigator)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.OnCinematicPlaying");
-
-	UWoundedComponent_OnCinematicPlaying_Params params;
-	params.Settings = Settings;
-	params.CurrentSequence = CurrentSequence;
-	params.Instigator = Instigator;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnWounded
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FDamageInfo             Damage                         (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-void UWoundedComponent::MulticastOnWounded(const struct FDamageInfo& Damage)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnWounded");
-
-	UWoundedComponent_MulticastOnWounded_Params params;
-	params.Damage = Damage;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// class UWoundedComponent*       WoundedComponent               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWoundedComponent::MulticastOnTargetRevived(class UWoundedComponent* WoundedComponent)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived");
-
-	UWoundedComponent_MulticastOnTargetRevived_Params params;
-	params.WoundedComponent = WoundedComponent;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnRevived
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// bool                           bSelfRevive                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-void UWoundedComponent::MulticastOnRevived(bool bSelfRevive)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.MulticastOnRevived");
-
-	UWoundedComponent_MulticastOnRevived_Params params;
-	params.bSelfRevive = bSelfRevive;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.Kill
-// (Final, Native, Public, BlueprintCallable)
-void UWoundedComponent::Kill()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.Kill");
-
-	UWoundedComponent_Kill_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-}
-
-
-// Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-float UWoundedComponent::GetWoundedHealthPct()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct");
-
-	UWoundedComponent_GetWoundedHealthPct_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x00000400;
-
-	UObject::ProcessEvent(fn, &params);
-	fn->FunctionFlags = flags;
-
-
-	return params.ReturnValue;
 }
 
 

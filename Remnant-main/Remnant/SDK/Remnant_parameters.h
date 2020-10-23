@@ -1,6 +1,6 @@
 #pragma once
 
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -2546,6 +2546,17 @@ struct URemnantPlayerInventoryComponent_AddProtectionTimeOut_Params
 {
 };
 
+// Function Remnant.RemnantProgressionComponent.ServerAddExperience
+struct URemnantProgressionComponent_ServerAddExperience_Params
+{
+	int                                                Exp;                                                       // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Remnant.RemnantProgressionComponent.ClientAddProgressionTimeOut
+struct URemnantProgressionComponent_ClientAddProgressionTimeOut_Params
+{
+};
+
 // Function Remnant.RemnantProgressionComponent.AddProtectionTimeOut
 struct URemnantProgressionComponent_AddProtectionTimeOut_Params
 {
@@ -3446,6 +3457,18 @@ struct ARemnantSpectatorPawn_GetCurrentTarget_Params
 	class AActor*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Remnant.RemnantTraitsComponent.ServerAddTraitPoints
+struct URemnantTraitsComponent_ServerAddTraitPoints_Params
+{
+	int                                                Points;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Remnant.RemnantTraitsComponent.MarkClientTraitPointChangeValid
+struct URemnantTraitsComponent_MarkClientTraitPointChangeValid_Params
+{
+	int                                                AddedTraitPoints;                                          // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Remnant.RemnantTraitsComponent.GetTraitsForLevel
 struct URemnantTraitsComponent_GetTraitsForLevel_Params
 {
@@ -3477,6 +3500,21 @@ struct URemnantTraitsComponent_GetTotalAvailableTraits_Params
 struct URemnantTraitsComponent_GetNumAvailableTraits_Params
 {
 	int                                                ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Remnant.RemnantTraitsComponent.ClientTraitPointTimeOut
+struct URemnantTraitsComponent_ClientTraitPointTimeOut_Params
+{
+};
+
+// Function Remnant.RemnantTraitsComponent.ClientTraitLevelTimeOut
+struct URemnantTraitsComponent_ClientTraitLevelTimeOut_Params
+{
+};
+
+// Function Remnant.RemnantTraitsComponent.ClientSpentTraitPointTimeOut
+struct URemnantTraitsComponent_ClientSpentTraitPointTimeOut_Params
+{
 };
 
 // Function Remnant.RemnantUtil.IsGameSessionReady

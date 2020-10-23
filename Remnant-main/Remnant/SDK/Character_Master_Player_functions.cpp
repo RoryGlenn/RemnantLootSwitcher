@@ -1,4 +1,4 @@
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 

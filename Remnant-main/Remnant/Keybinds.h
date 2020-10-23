@@ -23,4 +23,5 @@ public:
 	static void Set(int key, int key2, bool repeat, std::function<void(void)> func);
 	static void Set(int key, int key2, int key3, bool repeat, std::function<void(void)> func);
 	static void Tick();
+	static void Clear();
 };

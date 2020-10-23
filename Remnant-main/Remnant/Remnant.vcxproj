@@ -249,6 +249,7 @@
     <ClCompile Include="SDK\Remnant_PlayerController_functions.cpp" />
     <ClCompile Include="SDK\TPSHud_functions.cpp" />
     <ClCompile Include="SDK\UMG_functions.cpp" />
+    <ClCompile Include="SigScan.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="kiero\minhook\dll_resources\MinHook.def" />

@@ -1,11 +1,9 @@
 
 #include <iostream>
-#include <locale>
-#include <sstream>
 #include <string>
 #include <vector>
 #include <optional>
-#include <d3d11.h>
+#include <map>
 
 #include "pch.h"
 #include "Keybinds.h"
@@ -19,7 +17,6 @@ void SetupKeybinds();
 void OnImGuiLoadUp();
 
 
-
 // kiero hooking stuff
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -31,9 +28,8 @@ ID3D11DeviceContext* pContext = NULL;
 ID3D11RenderTargetView* mainRenderTargetView;
 
 static UFT::ARemnant_PlayerController_C* MyPlayerController = nullptr;
-static UFT::UFont* MyFont = nullptr;
 
-std::vector<float> Yp{};
+//std::vector<float> Yp{};
 
 // Typedef to make hooking ProcessEvent and PostRender easier
 typedef void(*tProcessEvent)(UFT::UObject*, UFT::UFunction*, void*);
@@ -44,15 +40,18 @@ tPostRender Real_PostRender = nullptr;
 
 ConfigFile configurationFile;
 
+int currentIndex = -1;
+
 bool bOnImGuiLoadUp				= false;
 bool bInit						= false;
 bool bInventoryScanned			= false;
 bool bEquip						= false;
+bool EditKeyState				= false;
 bool resetinventorycomponents	= true;
 bool bShowImGui					= true;
 
 std::string current_item = "";
-std::optional<bool> SwitchLoadout;
+//std::optional<bool> SwitchLoadout;
 
 // a global variable for storing the players inventory
 UFT::TArray<UFT::FInventoryItem> INVItems;
@@ -176,23 +175,85 @@ std::vector<std::string> ringStr
 };
 
 
+std::map<int, std::string> KeyMap = {
+	{112, "F1"},
+	{113, "F2"},
+	{114, "F3"},
+	{115, "F4"},
+	{116, "F5"},
+	{117, "F6"},
+	{118, "F7"},
+	{119, "F8"},
+	{120, "F9"},
+	{122, "F11"},
+	{96, "NP_0"},
+	{97, "NP_1"},
+	{98, "NP_2"},
+	{99, "NP_3"},
+	{100, "NP_4"},
+	{101, "NP_5"},
+	{102, "NP_6"},
+	{103, "NP_7"},
+	{104, "NP_8"},
+	{105, "NP_9"},
+	{109, "NP_-"},
+	{107, "NP_+"},
+	{110, "NP_Del"},
+	{48, "0"},
+	{49, "1"},
+	{50, "2"},
+	{51, "3"},
+	{52, "4"},
+	{53, "5"},
+	{54, "6"},
+	{55, "7"},
+	{56, "8"},
+	{57, "9"},
+	{65, "A"},
+	{66, "B"},
+	{67, "C"},
+	{68, "D"},
+	{69, "E"},
+	{70, "F"},
+	{71, "G"},
+	{72, "H"},
+	{73, "I"},
+	{74, "J"},
+	{75, "K"},
+	{76, "L"},
+	{77, "M"},
+	{78, "N"},
+	{79, "O"},
+	{80, "P"},
+	{81, "Q"},
+	{82, "R"},
+	{83, "S"},
+	{84, "T"},
+	{85, "U"},
+	{86, "V"},
+	{87, "W"},
+	{88, "X"},
+	{89, "Y"},
+	{90, "Z"}
+};
 
 std::vector<TypeLoadOut> CurrentLoadOutsInIMGUI = 
 {
 	// initializes the variables with an empty string
 
 	{
-		"",		// loadOutName
-		"",		// handgun
-		"",		// LongGun
-		"",		// Melee
-		"",		// Helmet
-		"",		// Chest
-		"",		// Legs
-		"",		// Amulet
-		"",		// Ring1
-		"",		// Ring2
-		0,		// KeyV
+		"New Loadout",	// loadOutName
+		"",				// handgun
+		"",				// LongGun
+		"",				// Melee
+		"",				// Helmet
+		"",				// Chest
+		"",				// Legs
+		"",				// Amulet
+		"",				// Ring1
+		"",				// Ring2
+		"UnBound",      // keyText
+		0,				// KeyV
 		false
 	}
 };
@@ -204,7 +265,6 @@ void PrintPlayerObjects()
 	printf("GNames:		  0x%p\n", UFT::FName::GNames);
 	printf("ProcessEvent: 0x%p\n", Real_ProcessEvent);
 	printf("PostRender:	  0x%p\n", Real_PostRender);
-	printf("MyFont:		  0x%p\n\n", MyFont);
 }
 
 void OnImGuiLoadUp()
@@ -212,13 +272,20 @@ void OnImGuiLoadUp()
 	// load the configuration file upon ImGui Startup
 	if (!bOnImGuiLoadUp)
 	{
-		std::cout << "Loading Configuration File" << std::endl;
 		auto filePath = R"(C:\Users\Rory Glenn\Desktop\LootSwitcher\Remnant-main\Remnant\ApplesConfigFile.cfg)";
 		int numOfLoadOuts = configurationFile.ReadFile(filePath, &CurrentLoadOutsInIMGUI);
-		configurationFile.SetGlobalLoadOutIndex(0);
-		configurationFile.SetNumLoadOuts(numOfLoadOuts);
-		std::cout << "Loaded Complete!" << std::endl;
+
+		if(numOfLoadOuts != 0)
+		{
+			configurationFile.SetGlobalLoadOutIndex(0);
+			configurationFile.SetNumLoadOuts(numOfLoadOuts);
+		}
+
 		bOnImGuiLoadUp = true;
+
+		SetupKeybinds();
+		std::cout << "Loaded Complete!" << std::endl;
+
 	}
 
 }
@@ -254,9 +321,9 @@ void FindStringInInventory(std::vector<std::string> itemCategory, std::string it
 			H_FindSpecialCaseStringInInventory(0, 4,  "abus",		 &itemName);
 			
 			// we have an 2 extra preorder sets that don't really exist in our inventory so lets remove them from the list
-			if(strcmp(itemName.c_str(), "Cultist_PreOrder") != 0 && 
+			if(strcmp( itemName.c_str(), "Cultist_PreOrder")  != 0 && 
 				strcmp(itemName.c_str(), "Scrapper_PreOrder") != 0 && 
-				strcmp(itemName.c_str(), "Hunter_PreOrder") != 0)
+				strcmp(itemName.c_str(), "Hunter_PreOrder")   != 0)
 			{
 				vecStrOfItems->push_back(itemName);
 			}
@@ -288,7 +355,6 @@ void CreateImGuiComboBox(const char* label, std::string* currentItem, std::vecto
 		}
 		ImGui::EndCombo();
 	}
-	
 }
 
 UFT::ACharacter_Master_Player_C* GetMyPlayer()
@@ -303,7 +369,7 @@ UFT::ACharacter_Master_Player_C* GetMyPlayer()
 
 void InitPlayerInventory()
 {
-	if(GetMyPlayer())
+	if(MyPlayerController)
 	{
 		std::cout << "InitPlayerInventory()" << std::endl;
 		//INVItems = GetMyPlayer()->Inventory->Items;
@@ -337,10 +403,11 @@ void EquipInventoryItem(std::string currentItemStr, int slotIndex, std::string s
 				if(GetMyPlayer()->Inventory->Items[i].EquipmentSlotIndex != -1 && 
 					itemName != "Weapon_Fist_C" && itemName != "Armor_Body_Nude_C" && itemName != "Armor_Legs_Nude_C")
 				{
-					GetMyPlayer()->GetCharacterInventory()->UnequipItemAtSlotIndex(slotIndex);
+					MyPlayerController->GetPlayerInventory()->UnequipItemAtSlotIndex(slotIndex);
+					//GetMyPlayer()->GetCharacterInventory()->UnequipItemAtSlotIndex(slotIndex);
 				}
-				GetMyPlayer()->GetCharacterInventory()->EquipItem(INVItems[i].ItemBP, slotIndex);
-				//GetMyPlayer()->GetCharacterInventory()->AutoEquipItem(INVItems[i].ItemBP, true);
+				MyPlayerController->GetPlayerInventory()->EquipItem(INVItems[i].ItemBP, slotIndex);
+				//MyPlayerController->GetPlayerInventory()->AutoEquipItem(INVItems[i].ItemBP, true);
 			}
 		}
 	}
@@ -374,7 +441,6 @@ void EquipInventoryItem(std::string currentItemStr, int slotIndex)
 			13: Amulet
 		*/
 
-
 		for (int i = 0; i < INVItems.Num(); i++)
 		{
 			std::size_t FoundItem = GetKismetSystemLibrary().STATIC_GetClassDisplayName(INVItems[i].ItemBP).ToString().find(currentItemStr);
@@ -383,16 +449,15 @@ void EquipInventoryItem(std::string currentItemStr, int slotIndex)
 				std::string itemName = GetKismetSystemLibrary().STATIC_GetClassDisplayName(GetMyPlayer()->Inventory->Items[i].ItemBP).ToString();
 				// if it is not -1 then it is currently equipped in a slot, if it is -1 then it is not equipped
 				if (GetMyPlayer()->Inventory->Items[i].EquipmentSlotIndex != -1 &&
-					itemName != "Weapon_Fist_C" && itemName != "Armor_Body_Nude_C" && itemName != "Armor_Legs_Nude_C")
+					itemName != "Weapon_Fist_C" && 
+					itemName != "Armor_Body_Nude_C" && 
+					itemName != "Armor_Legs_Nude_C")
 				{
-					//GetMyPlayer()->GetCharacterInventory()->UnequipItemAtSlotIndex(slotIndex);
 					MyPlayerController->GetPlayerInventory()->UnequipItemAtSlotIndex(slotIndex);
 				}
 				MyPlayerController->GetPlayerInventory()->EquipItem(INVItems[i].ItemBP, slotIndex);
-				
-				//GetMyPlayer()->GetCharacterInventory()->AutoEquipItem(INVItems[i].ItemBP, true);
+				//MyPlayerController->GetPlayerInventory()->AutoEquipItem(INVItems[i].ItemBP, true);
 
-				//GetMyPlayer()->GetCharacterInventory()->EquipItem(INVItems[i].ItemBP, slotIndex);
 			}
 		}
 		
@@ -460,18 +525,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 		OnImGuiLoadUp();
 
-		//// load the configuration file upon ImGui Startup
-		//if (!bOnImGuiLoadUp)
-		//{
-		//	std::cout << "Loading Configuration File" << std::endl;
-		//	auto filePath = R"(C:\Users\Rory Glenn\Desktop\LootSwitcher\Remnant-main\Remnant\ApplesConfigFile.cfg)";
-		//	int numOfLoadOuts = configurationFile.ReadFile(filePath, &CurrentLoadOutsInIMGUI);
-		//	configurationFile.SetGlobalLoadOutIndex(0);
-		//	configurationFile.SetNumLoadOuts(numOfLoadOuts);
-		//	std::cout << "Loaded Complete!" << std::endl;
-		//	bOnImGuiLoadUp = true;
-		//}
-
 		//ImGui::ShowDemoWindow();
 
 		ImGui::SetNextWindowSize(ImVec2(500, 440), ImGuiCond_FirstUseEver);
@@ -486,8 +539,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 					if (ImGui::MenuItem("Open..", "Ctrl+O"))
 					{
 						// open a file browser???
-
-						std::cout << "Loading Configuration File" << std::endl;
 
 						auto filePath = R"(C:\Users\Rory Glenn\Desktop\LootSwitcher\Remnant-main\Remnant\ApplesConfigFile.cfg)";
 						int numOfLoadOuts = configurationFile.ReadFile(filePath, &CurrentLoadOutsInIMGUI);
@@ -513,41 +564,61 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 						CurrentLoadOutsInIMGUI.push_back(
 							{
-								"New Loadout",		// loadOutName
-								"",		// handgun
-								"",		// LongGun
-								"",		// Melee
-								"",		// Helmet
-								"",		// Chest
-								"",		// Legs
-								"",		// Amulet
-								"",		// Ring1
-								"",		// Ring2
-								0,		// KeyV
-								false   // switches widgets on double click
+								"New Loadout",	// loadOutName
+								"",				// handgun
+								"",				// LongGun
+								"",				// Melee
+								"",				// Helmet
+								"",				// Chest
+								"",				// Legs
+								"",				// Amulet
+								"",				// Ring1
+								"",				// Ring2
+								"UnBound",		// KeyText
+								0,				// KeyV
+								false			// switches widgets on double click
 							});
 
 						std::cout << "Created!" << std::endl;
 
 					}
 
-					// delete loadout
-					if(ImGui::MenuItem("Delete Loadout", "Ctrl+Delete"))
+					if (ImGui::MenuItem("Delete Loadout", "Ctrl+Delete"))
 					{
-						std::cout << "Deleting loadout..." << std::endl;
-
-						// don't delete if there is nothing to delete
-						if(configurationFile.GetNumLoadOuts() > 0)
+						// don't delete if there are no loadouts
+						if (configurationFile.GetNumLoadOuts() > 0)
 						{
-							configurationFile.SetNumLoadOuts(configurationFile.GetNumLoadOuts() - 1);
-							CurrentLoadOutsInIMGUI.pop_back();
+							// makes sure that a specific loadout is selected before we delete
+							if (currentIndex < configurationFile.GetNumLoadOuts() && currentIndex >= 0)
+							{
+								std::cout << "Deleting loadout..." << std::endl;
+								CurrentLoadOutsInIMGUI.erase(CurrentLoadOutsInIMGUI.begin() + currentIndex);
+
+								if (currentIndex > 0)
+								{
+									configurationFile.SetGlobalLoadOutIndex(currentIndex - 1);
+								}
+								else
+								{
+									configurationFile.SetGlobalLoadOutIndex(currentIndex);
+								}
+
+								configurationFile.SetNumLoadOuts(configurationFile.GetNumLoadOuts() - 1);
+								SetupKeybinds();
+
+								std::cout << "Deleted!" << std::endl;
+							}
+							else
+							{
+								std::cout << "Did not delete" << std::endl;
+							}
+
 						}
 
-						std::cout << "Deleted!" << std::endl;
 					}
 
-					
 					ImGui::EndMenu();
+
 				}
 				ImGui::EndMenuBar();
 			}
@@ -559,14 +630,19 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 				for (int i = 0; i < configurationFile.GetNumLoadOuts(); i++)
 				{
+
 					std::string CurrentNameBuffer = CurrentLoadOutsInIMGUI[i].loadOutName;
 
 					// when we have double clicked and are editing the name
 					if (!CurrentLoadOutsInIMGUI[i].textEdit)
 					{
+
 						ImGui::LabelText((std::string("##L") + std::to_string(i)).c_str(), (char*)CurrentNameBuffer.c_str());
 						if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0))
 						{
+							printf("current index: %d\n", i);
+							currentIndex = i;
+
 							// sets one text edit true at a time while setting the others to false
 							CurrentLoadOutsInIMGUI[i].textEdit = true;
 							for (int j = 0; j < CurrentLoadOutsInIMGUI.size(); j++)
@@ -629,20 +705,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 				resetinventorycomponents = false;
 			}
 
-			//  get the currently equipped items
-			//if(GetMyPlayer())
-			if (MyPlayerController)
-			{
-				std::string currentHandGun = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 0].NameID.GetName();
-				std::string currentLongGun = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 1].NameID.GetName();
-				std::string currentMelee   = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 2].NameID.GetName();
-				std::string currentHelmet  = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 4].NameID.GetName();
-				std::string currentBody    = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 5].NameID.GetName();
-				std::string currentRing1   = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 8].NameID.GetName();
-				std::string currentRing2   = MyPlayerController->GetPlayerInventory()->EquipmentSlots[ 9].NameID.GetName(); // <--------- COMMON ERROR HERE!!!!!!!!!!!!!!!!!!
-				std::string currentLegs    = MyPlayerController->GetPlayerInventory()->EquipmentSlots[11].NameID.GetName();
-				std::string currentAmulet  = MyPlayerController->GetPlayerInventory()->EquipmentSlots[13].NameID.GetName();
-			}
+			//std::cout << "Global Loadout index: " << configurationFile.GetGlobalLoadOutIndex() << std::endl;
 
 			// create combo-boxs and show currently equipped items
 			CreateImGuiComboBox(" HandGuns", &CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].handgun, vecStrHandGuns);
@@ -657,9 +720,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 			ImGui::EndChild();
 
-			// create Revert, Save and Reset Inventory Items buttons
-			//if (ImGui::Button("Revert")){}
-			//ImGui::SameLine();
 
 			if (ImGui::Button("Save"))
 			{
@@ -685,11 +745,52 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			}
 			ImGui::SameLine();
 
-			if (ImGui::Button("Equip Now"))
+			//if (ImGui::Button("Equip Now"))
+			//{
+			//	SwitchLoadout = true;
+			//}
+			ImGui::SameLine();
+
+
+			std::string KName;
+
+			// create hotkey button
+			if (EditKeyState)
 			{
-				SwitchLoadout = true;
+				KName = "PressKey";
+				for (auto& KV : KeyMap)
+				{
+					if (GetAsyncKeyState(KV.first) & WM_KEYUP)
+					{
+						for (int i = 0; i < CurrentLoadOutsInIMGUI.size(); i++)
+						{
+							if (CurrentLoadOutsInIMGUI[i].KeyV == KV.first)
+								goto HERE;
+						}
+						CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].keyText = KV.second;
+						CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].KeyV = KV.first;
+
+						//also call this everytime you read a file and delete a loadout
+						SetupKeybinds();
+
+					HERE:
+						EditKeyState = false;
+
+					}
+				}
+			}
+			else
+			{
+				KName = CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].keyText;
+			}
+
+			if (ImGui::Button(KName.c_str()))
+			{
+				if (!EditKeyState)
+					EditKeyState = true;
 			}
 			ImGui::SameLine();
+			ImGui::LabelText("DumbLabel", ":Bind");
 			ImGui::EndGroup();
 		}
 
@@ -703,7 +804,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	return oPresent(pSwapChain, SyncInterval, Flags);
 }
-
 
 void UnequipEverything()
 {
@@ -732,7 +832,6 @@ void Hooked_PostRender(UFT::UGameViewportClient* this__, UFT::UCanvas* Canvas)
 
 	return Real_PostRender(this__, Canvas);
 }
-
 
 void Hooked_ProcessEvent(UFT::UObject* this__, UFT::UFunction* fn, void* params)
 {
@@ -782,139 +881,381 @@ void Hooked_ProcessEvent(UFT::UObject* this__, UFT::UFunction* fn, void* params)
 
 void SetupKeybinds()
 {
-	Keybinds::Set(VK_F1, false, []
-	{
-		if (MyPlayerController)
-		{
-			// get all the values from imgui
-			std::cout << "Equipping Now..." << std::endl;
+	// unbind all the keys that are previously set
 
-			INVItems = MyPlayerController->GetPlayerInventory()->Items;
-				
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Helmet,  4,  "Armor_Head_"); std::cout << "equipped helmet"  << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Chest,   5,  "Armor_Body_"); std::cout << "equipped chest"   << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
-			EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
-
-			std::cout << "Equipping Complete!" << std::endl;
-		}
-		
-	});
+	Keybinds::Clear();
 	
-	Keybinds::Set(VK_F2, false, []
+	for(int i = 0; i < CurrentLoadOutsInIMGUI.size(); i++)
+	{
+		// if the keybind is valid
+		if(CurrentLoadOutsInIMGUI[i].KeyV > 0 )
 		{
-			if (MyPlayerController)
+			Keybinds::Set(CurrentLoadOutsInIMGUI[i].KeyV, false, [i]
 			{
-
-				// get all the values from imgui
-				std::cout << "Equipping Now..." << std::endl;
-
-				INVItems = MyPlayerController->GetPlayerInventory()->Items;
-
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Helmet,  4,  "Armor_Head_"); std::cout << "equipped helmet"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Chest,   5,  "Armor_Body_"); std::cout << "equipped chest"   << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
-
-				std::cout << "Equipping Complete!" << std::endl;
-			}
-
-		});
-
-
-	Keybinds::Set(VK_F3, false, []
-		{
-			if (MyPlayerController)
-			{
-				std::cout << "Equipping Now..." << std::endl;
-
-				INVItems = MyPlayerController->GetPlayerInventory()->Items;
-
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Helmet,  4, "Armor_Head_");  std::cout << "equipped helmet"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Chest,   5, "Armor_Body_");  std::cout << "equipped chest"   << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
-				EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
-
-				std::cout << "Equipping Complete!" << std::endl;
-			}
-
-		});
-
-	//// 1 reset item levels
-	//Keybinds::Set(0x31, false, [] {
-
-	//	if (GetMyPlayer())
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Melee, 2);					  std::cout << "equipped melee" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Helmet, 4, "Armor_Head_");	  std::cout << "equipped helmet" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Chest, 5, "Armor_Body_");	  std::cout << "equipped chest" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Legs, 11, "Armor_Legs_");	  std::cout << "equipped legs" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Amulet, 13);				  std::cout << "equipped amulet" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Ring1, 8);					  std::cout << "equipped ring 1" << std::endl;
+				EquipInventoryItem(CurrentLoadOutsInIMGUI[i].Ring2, 9);					  std::cout << "equipped ring 2" << std::endl;
+			});
+		}
+	}
+	
+	
+	//Keybinds::Set(VK_F1, false, []
+	//{
+	//	if (MyPlayerController)
 	//	{
-	//		// since we are playing and not traveling, set all our items back to max level
-	//		auto Items = GetMyPlayer()->Inventory->Items;
-	//		for (int i = 0; i < Items.Num(); i++)
-	//		{
-	//			// if name starts with trinket, set to 1
-	//			std::string str = GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString();
+	//		// get all the values from imgui
+	//		std::cout << "Equipping Now..." << std::endl;
 
-	//			auto foundTrinket	 = str.find("Trinket");
-	//			auto foundConsumable = str.find("Consumable");
-	//			auto foundResource	 = str.find("Resource");
+	//		INVItems = MyPlayerController->GetPlayerInventory()->Items;
+	//			
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Helmet,  4,  "Armor_Head_"); std::cout << "equipped helmet"  << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Chest,   5,  "Armor_Body_"); std::cout << "equipped chest"   << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
+	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[0].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
 
-	//			if (foundTrinket != std::string::npos)
-	//			{
-	//				GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 1);
-	//			}
-	//			else if (foundConsumable != std::string::npos)
-	//			{
-	//				GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 1);
-	//			}
-	//			else if (foundResource != std::string::npos)
-	//			{
-	//				GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 1);
-	//			}
-	//			else
-	//			{
-	//				GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 21);
-	//			}
-	//		}
+	//		std::cout << "Equipping Complete!" << std::endl;
 	//	}
+	//	
+	//});
+	//
+	//Keybinds::Set(VK_F2, false, []
+	//	{
+	//		if (MyPlayerController)
+	//		{
+
+	//			// get all the values from imgui
+	//			std::cout << "Equipping Now..." << std::endl;
+
+	//			INVItems = MyPlayerController->GetPlayerInventory()->Items;
+
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Helmet,  4,  "Armor_Head_"); std::cout << "equipped helmet"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Chest,   5,  "Armor_Body_"); std::cout << "equipped chest"   << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[1].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
+
+	//			std::cout << "Equipping Complete!" << std::endl;
+	//		}
 
 	//	});
 
-	// if the imgui menu is open and we are alt tabbed, the game crashes
-	// but if imgui is closed while we are alt tabbed it doesn't.
-	// this makes sure imgui is closed if the player alt tabs
-	Keybinds::Set(VK_MENU, false, []
-	{
-		std::cout << "Alt pressed" << std::endl;
+	//Keybinds::Set(VK_F3, false, []
+	//	{
+	//		if (MyPlayerController)
+	//		{
+	//			std::cout << "Equipping Now..." << std::endl;
 
-		if(GetAsyncKeyState(VK_TAB))
-		{
-			std::cout << "Alt and Tab pressed" << std::endl;
-			bShowImGui = false;
-		}
-		
-	});
+	//			INVItems = MyPlayerController->GetPlayerInventory()->Items;
 
-	// if the imgui menu is open and we are alt tabbed, the game crashes
-	// but if imgui is closed while we are alt tabbed it doesn't.
-	// this makes sure imgui is closed if the player alt tabs
-	Keybinds::Set(VK_LWIN, false, []
-	{
-		std::cout << "Windows Key Pressed" << std::endl;
-		bShowImGui = false;
-	});
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Helmet,  4, "Armor_Head_");  std::cout << "equipped helmet"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Chest,   5, "Armor_Body_");  std::cout << "equipped chest"   << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
+	//			EquipInventoryItem(CurrentLoadOutsInIMGUI[2].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
+
+	//			std::cout << "Equipping Complete!" << std::endl;
+	//		}
+
+	//	});
+
+	////// F5: set item levels LOW
+	//Keybinds::Set(VK_F4, false, []
+	//	{
+	//		if (MyPlayerController)
+	//		{
+	//			// since we are playing and not traveling, set all our items back to max level
+	//			auto Items = GetMyPlayer()->Inventory->Items;
+	//			for (int i = 0; i < Items.Num(); i++)
+	//			{
+	//				// if name starts with trinket, set to 1
+	//				std::string str = GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString();
+
+	//				auto foundTrinket = str.find("Trinket");
+	//				auto foundConsumable = str.find("Consumable");
+	//				auto foundResource = str.find("Resource");
+	//				auto foundSkin = str.find("Skin_C");
+	//				auto foundFist = str.find("Weapon_Fist_C");
+	//				auto foundNude = str.find("Nude_C");
+
+
+	//				auto foundWeapon = str.find("Weapon_");
+	//				auto foundLetoArmor = str.find("Leto_C");
+	//				auto foundSlayerArmor = str.find("Slayer_C");
+	//				auto foundCarapace = str.find("Carapace_C");
+	//				auto foundRichochet = str.find("RicochetRifle");
+	//				auto foundHiveCannon = str.find("HiveCannon");
+	//				auto foundPetrified = str.find("PetrifiedMaul");
+	//				auto foundMod = str.find("Mod_");
+
+	//				auto foundArmor = str.find("Armor_");
+
+	//				int highestGearLevel = 20 + 1;
+	//				int lowestGearLevel = 1;
+
+	//				if (foundFist != std::string::npos)
+	//				{
+	//					 
+	//				}
+	//				else if (foundNude != std::string::npos)
+	//				{
+
+	//				}
+	//				else if (foundWeapon != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, lowestGearLevel);
+	//				}
+	//				else if (foundArmor != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, lowestGearLevel);
+	//				}
+	//				else
+	//				{
+	//					
+	//				}
+
+
+	//			}
+
+
+	//		}
+	//	});
+
+	////// F5: set item level to 20
+	//Keybinds::Set(VK_F5, false, []
+	//	{
+	//		if (MyPlayerController)
+	//		{
+
+	//			auto Items = GetMyPlayer()->Inventory->Items;
+	//			for (int i = 0; i < Items.Num(); i++)
+	//			{
+	//				// if name starts with trinket, set to 1
+	//				std::string str = GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString();
+
+	//				auto foundTrinket = str.find("Trinket");
+	//				auto foundConsumable = str.find("Consumable");
+	//				auto foundResource = str.find("Resource");
+	//				auto foundSkin = str.find("Skin_C");
+	//				auto foundFist = str.find("Weapon_Fist_C");
+	//				auto foundNude = str.find("Nude_C");
+
+
+	//				auto foundWeapon = str.find("Weapon_");
+	//				auto foundMod = str.find("Mod_");
+	//				auto foundHeadSlayer = str.find("Armor_Head_Slayer_C");
+	//				auto foundChestSlayer = str.find("Armor_Body_Slayer_C");
+	//				auto foundLegsSlayer = str.find("Armor_Legs_Slayer_C");
+
+	//				auto foundAssaultRifle = str.find("Weapon_AssaultRifle_C");
+	//				auto foundHuntingPistol = str.find("Weapon_HuntingPistol_C");
+	//				auto foundScrapHammer = str.find("Weapon_Hammer_C");
+	//				
+	//				int highestGearLevel = 20 + 1;
+	//				int lowestGearLevel = 1;
+
+	//				
+	//				if (foundFist != std::string::npos)
+	//				{
+
+	//				}
+
+	//				else if (foundNude != std::string::npos)
+	//				{
+
+	//				}
+	//				else if (foundAssaultRifle != std::string::npos ||
+	//					foundHuntingPistol != std::string::npos ||
+	//					foundScrapHammer != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, highestGearLevel);
+	//				}
+	//				else if (foundHeadSlayer != std::string::npos ||
+	//						 foundChestSlayer != std::string::npos ||
+	//						 foundLegsSlayer != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, highestGearLevel);
+	//				}
+	//				else
+	//				{
+
+	//				}
+	//			}
+
+
+	//		}
+	//	});
+
+	////// F5: set item levels 250
+	//Keybinds::Set(VK_F6, false, []
+	//	{
+	//		if (MyPlayerController)
+	//		{
+
+	//			auto Items = GetMyPlayer()->Inventory->Items;
+	//			for (int i = 0; i < Items.Num(); i++)
+	//			{
+	//				// if name starts with trinket, set to 1
+	//				std::string str = GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString();
+
+	//				auto foundTrinket = str.find("Trinket");
+	//				auto foundConsumable = str.find("Consumable");
+	//				auto foundResource = str.find("Resource");
+	//				auto foundSkin = str.find("Skin_C");
+	//				auto foundFist = str.find("Weapon_Fist_C");
+	//				auto foundNude = str.find("Nude_C");
+
+
+	//				auto foundWeapon = str.find("Weapon_");
+	//				auto foundLetoArmor = str.find("Leto_C");
+	//				auto foundSlayerArmor = str.find("Slayer_C");
+	//				auto foundCarapace = str.find("Carapace_C");
+	//				auto foundRichochet = str.find("RicochetRifle");
+	//				auto foundHiveCannon = str.find("HiveCannon");
+	//				auto foundPetrified = str.find("PetrifiedMaul");
+	//				auto foundMod = str.find("Mod_");
+
+	//				auto foundArmor = str.find("Armor_");
+
+	//				int highestGearLevel = 20 + 1;
+	//				int lowestGearLevel = 1;
+
+
+
+	//				if (foundFist != std::string::npos)
+	//				{
+
+	//				}
+
+	//				else if (foundNude != std::string::npos)
+	//				{
+
+	//				}
+	//				else if (foundWeapon != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 250);
+	//				}
+	//				else if (foundArmor != std::string::npos)
+	//				{
+	//					GetMyPlayer()->Inventory->SetItemLevel(Items[i].ItemBP, 250);
+	//				}
+	//				else
+	//				{
+	//					
+	//				}
+	//			}
+
+	//			
+	//		}
+	//	});
+
+	//Keybinds::Set(VK_F8, false, []
+	//	{
+	//		GetMyPlayer()->God_Mode = true;
+	//	});
+
+	////  Force "takeall" of all items on the map
+	//Keybinds::Set(VK_F10, false, [] {
+	//	if (MyPlayerController)
+	//	{
+	//		UFT::TArray<UFT::AActor*> OutActors{};
+	//		GetGameplayStatics().STATIC_GetAllActorsOfClass(MyPlayerController, UFT::AItem::StaticClass(), &OutActors);
+	//		for (auto i = 0; i < OutActors.Num(); i++)
+	//		{
+	//			auto TheItem = (UFT::AItem*)OutActors[i];
+	//			if (/*TheItem->IsA(UFT::AUseableItem::StaticClass()) &&*/ GetMyPlayer())
+	//			{
+	//				if (!TheItem->GetOwner() || TheItem->GetOwner() != GetMyPlayer())
+	//				{
+	//					GetMyPlayer()->Inventory->ServerPickupItem(TheItem);
+	//					std::cout << "Trying to pick up " << TheItem->GetName() << "\n";
+	//				}
+	//			}
+	//		}
+	//	}
+	//	});
+
+	//// F3 - Print info about the Item Slots in your inventory
+	//Keybinds::Set(VK_F11, false, [] {
+	//	for (auto i = 0; i < GetMyPlayer()->Inventory->EquipmentSlots.Num(); i++) {
+	//		const auto& Slot = GetMyPlayer()->Inventory->EquipmentSlots[i];
+	//		std::cout << i << ": " << Slot.HotKey.GetName() << ": " << Slot.NameID.GetName() << std::endl;
+	//	}
+	//	});
+
+	////  - Print info about the Item Slots in your inventory
+	//Keybinds::Set(VK_F12, false, [] {
+	//	// Print inventory items in center-ish of screen
+	//	if (MyPlayerController)
+	//	{
+	//		int index = 0;
+	//		auto Items = GetMyPlayer()->Inventory->Items;
+	//		for (auto i = 0; i < Items.Num(); i++)
+	//		{
+	//			//std::wstring Iteminfo =
+	//			//	L"Slot " + std::to_wstring(Items[i].EquipmentSlotIndex) + L": "
+	//			//	+ GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToWString()
+	//			//	+ L" | Qty: " + std::to_wstring(Items[i].InstanceData->Quantity)
+	//			//	+ L" | Level: " + std::to_wstring(Items[i].InstanceData->Level)
+	//			//	+ L" | ItemID: " + std::to_wstring(Items[i].ID);
+	//			//std::wcout << Iteminfo << std::endl;
+
+	//			std::cout << "Name:   " + GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString()
+	//					  << "Slot:   " + std::to_string(Items[i].EquipmentSlotIndex)
+	//					  << "Qty:    " + std::to_string(Items[i].InstanceData->Quantity)
+	//					  << "Level:  " + std::to_string(Items[i].InstanceData->Level)
+	//					  << "ItemID: " + std::to_string(Items[i].ID) << std::endl;
+	//			
+	//		}
+	//		
+	//		//GetMyPlayer()->ServerUnequipMod(388);
+	//		//GetMyPlayer()->God_Mode = true;
+	//		//for (auto i = 0; i < Items.Num(); i++)
+	//		//{
+	//		//	if ( GetKismetSystemLibrary().STATIC_GetClassDisplayName(Items[i].ItemBP).ToString() == "Weapon_Coachgun_C")
+	//		//	{
+	//		//		GetMyPlayer()->Inventory->RemoveItem(Items[i].ItemBP, 1, 0);
+	//		//	}
+	//		//}
+	//	}
+	//	});
+
+	//// if the imgui menu is open and we are alt tabbed, the game crashes
+	//// but if imgui is closed while we are alt tabbed it doesn't.
+	//// this makes sure imgui is closed if the player alt tabs
+
+	//// VK_MENU = Alt
+	//Keybinds::Set(VK_MENU, false, []
+	//	{
+	//		std::cout << "Alt pressed" << std::endl;
+	//		bShowImGui = false;
+	//	});
+
+	//// VK_LWIN = Windows Key
+	//Keybinds::Set(VK_LWIN, false, []
+	//	{
+	//		std::cout << "Windows Key Pressed" << std::endl;
+	//		bShowImGui = false;
+	//	});
 	
 }
 
@@ -922,29 +1263,20 @@ DWORD WINAPI MainThread()
 {
 	bool init_hook = false;
 	FILE* pFile = nullptr;
-	DWORD processID = 0;
+	//DWORD processID = 0;
 	
 	AllocConsole();
 	freopen_s(&pFile, "CONOUT$", "w", stdout);
 	ShowWindow(GetConsoleWindow(), SW_SHOW);
-	
-	HWND hWnd = 0;
-	while (!hWnd)
-	{
-		hWnd = FindWindowW(L"UnrealWindow", NULL);
-	}
 
 	UFT::InitSdk();
-
-	while (!MyFont)
-	{
-		MyFont = UFT::UObject::FindObject<UFT::UFont>("Font Roboto.Roboto");
-	}
-
+	
 	// We will hook ProcessEvent because everything mostly everything we need gets filtered through ProcessEvent, so by hooking it we can find pointers to all the actors, players, inventories, etc..
-	Real_ProcessEvent = reinterpret_cast<tProcessEvent>(reinterpret_cast<void**>(UFT::UObject::StaticClass()->VfTable)[64]);
-	Real_PostRender = reinterpret_cast<tPostRender>(reinterpret_cast<void**>(UFT::UGameViewportClient::StaticClass()->CreateDefaultObject()->VfTable)[91]);
 
+	Real_ProcessEvent = reinterpret_cast<tProcessEvent>(reinterpret_cast<void**>(UFT::UObject::StaticClass()->VfTable)[64]); // ORIGINAL
+	Real_PostRender   = reinterpret_cast<tPostRender>(reinterpret_cast<void**>(UFT::UGameViewportClient::StaticClass()->CreateDefaultObject()->VfTable)[91]);
+
+	
 	SetupKeybinds();
 
 	std::cout << "DLL Injected!" << std::endl;
@@ -959,8 +1291,6 @@ DWORD WINAPI MainThread()
 		return FALSE;
 	}
 
-
-	// move this above detours????????
 	do
 	{
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
@@ -972,30 +1302,7 @@ DWORD WINAPI MainThread()
 	} while (!init_hook);
 
 
-	//InitPlayerInventory();
-	//
-	// loop through load outs and check key value
-	//while(true)
-	//{
-	//	if (SwitchLoadout.has_value())
-	//	{
-	//		std::cout << "Equipping Now..." << std::endl;
-	//		
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].handgun, 0);				  std::cout << "equipped handgun" << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].LongGun, 1);				  std::cout << "equipped longgun" << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Melee,   2);				  std::cout << "equipped melee"   << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Helmet,  4,  "Armor_Head_"); std::cout << "equipped helmet"  << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Chest,   5,  "Armor_Body_"); std::cout << "equipped chest"   << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Legs,    11, "Armor_Legs_"); std::cout << "equipped legs"    << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Amulet,  13);				  std::cout << "equipped amulet"  << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Ring1,   8);				  std::cout << "equipped ring 1"  << std::endl;
-	//		EquipInventoryItem(CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].Ring2,   9);				  std::cout << "equipped ring 2"  << std::endl;
-
-	//		SwitchLoadout = std::nullopt;
-
-	//		std::cout << "Equipping Complete!" << std::endl;
-	//	}
-	//}
+	InitPlayerInventory();
 	
 	return TRUE;
 }

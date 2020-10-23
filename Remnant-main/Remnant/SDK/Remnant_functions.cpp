@@ -1,4 +1,4 @@
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -8378,6 +8378,43 @@ void URemnantPlayerInventoryComponent::AddProtectionTimeOut()
 }
 
 
+// Function Remnant.RemnantProgressionComponent.ServerAddExperience
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// int                            Exp                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void URemnantProgressionComponent::ServerAddExperience(int Exp)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantProgressionComponent.ServerAddExperience");
+
+	URemnantProgressionComponent_ServerAddExperience_Params params;
+	params.Exp = Exp;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Remnant.RemnantProgressionComponent.ClientAddProgressionTimeOut
+// (Final, Native, Protected)
+void URemnantProgressionComponent::ClientAddProgressionTimeOut()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantProgressionComponent.ClientAddProgressionTimeOut");
+
+	URemnantProgressionComponent_ClientAddProgressionTimeOut_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
 // Function Remnant.RemnantProgressionComponent.AddProtectionTimeOut
 // (Final, Native, Protected)
 void URemnantProgressionComponent::AddProtectionTimeOut()
@@ -11378,6 +11415,46 @@ class AActor* ARemnantSpectatorPawn::GetCurrentTarget(bool bOnlyIfValid)
 }
 
 
+// Function Remnant.RemnantTraitsComponent.ServerAddTraitPoints
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// int                            Points                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void URemnantTraitsComponent::ServerAddTraitPoints(int Points)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantTraitsComponent.ServerAddTraitPoints");
+
+	URemnantTraitsComponent_ServerAddTraitPoints_Params params;
+	params.Points = Points;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Remnant.RemnantTraitsComponent.MarkClientTraitPointChangeValid
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            AddedTraitPoints               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+void URemnantTraitsComponent::MarkClientTraitPointChangeValid(int AddedTraitPoints)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantTraitsComponent.MarkClientTraitPointChangeValid");
+
+	URemnantTraitsComponent_MarkClientTraitPointChangeValid_Params params;
+	params.AddedTraitPoints = AddedTraitPoints;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
 // Function Remnant.RemnantTraitsComponent.GetTraitsForLevel
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -11486,6 +11563,57 @@ int URemnantTraitsComponent::GetNumAvailableTraits()
 
 
 	return params.ReturnValue;
+}
+
+
+// Function Remnant.RemnantTraitsComponent.ClientTraitPointTimeOut
+// (Final, Native, Protected)
+void URemnantTraitsComponent::ClientTraitPointTimeOut()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantTraitsComponent.ClientTraitPointTimeOut");
+
+	URemnantTraitsComponent_ClientTraitPointTimeOut_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Remnant.RemnantTraitsComponent.ClientTraitLevelTimeOut
+// (Final, Native, Protected)
+void URemnantTraitsComponent::ClientTraitLevelTimeOut()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantTraitsComponent.ClientTraitLevelTimeOut");
+
+	URemnantTraitsComponent_ClientTraitLevelTimeOut_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
+}
+
+
+// Function Remnant.RemnantTraitsComponent.ClientSpentTraitPointTimeOut
+// (Final, Native, Protected)
+void URemnantTraitsComponent::ClientSpentTraitPointTimeOut()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Remnant.RemnantTraitsComponent.ClientSpentTraitPointTimeOut");
+
+	URemnantTraitsComponent_ClientSpentTraitPointTimeOut_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x00000400;
+
+	UObject::ProcessEvent(fn, &params);
+	fn->FunctionFlags = flags;
+
 }
 
 

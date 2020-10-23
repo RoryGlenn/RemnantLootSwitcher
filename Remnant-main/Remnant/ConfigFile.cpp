@@ -1,6 +1,6 @@
 #include "ConfigFile.h"
 
-#pragma warning(disable : 4996)
+#include <sys/stat.h>
 
 // Line 1:  Number of load outs
 // Line 2:  Load out name for the first load out
@@ -34,6 +34,7 @@ int ConfigFile::ReadFile(std::string readFileName, std::vector<TypeLoadOut>* Cur
 	std::list<std::string>				   listReadIn;
 	std::vector<TypeLoadOut>			   loadOuts;
 	ConfigFile 							   configurationFile;
+	struct stat statbuf;
 	
 	int	numOfLoadOuts = 0;
 	int colonCount    = 0;
@@ -41,11 +42,19 @@ int ConfigFile::ReadFile(std::string readFileName, std::vector<TypeLoadOut>* Cur
 
 	try
 	{
-		readFile.open(readFileName, std::ios::out | std::ios::in);
+		// if the loadout already exists, don't create a new one
+		if(stat(readFileName.c_str(), &statbuf) != 0)
+		{
+			return 0;
+		}
+		
+		std::cout << "Loading Configuration File" << std::endl;
+		readFile.open(readFileName, std::ios::in | std::ios::out);
 	}
 	catch (int error)
 	{
 		printf("An exception occurred. Exception number %d\n: ", error);
+		return 0;
 	}
 
 	// iterate over each line of the configuration file and put it into listReadIn
@@ -89,9 +98,10 @@ int ConfigFile::ReadFile(std::string readFileName, std::vector<TypeLoadOut>* Cur
 			std::string Amulet		= listReadIn.front();		listReadIn.pop_front();
 			std::string Ring1		= listReadIn.front();		listReadIn.pop_front();
 			std::string Ring2		= listReadIn.front();		listReadIn.pop_front();
+			std::string keyText		= listReadIn.front();		listReadIn.pop_front();
 			int KeyV				= stoi(listReadIn.front()); listReadIn.pop_front();
 			
-			loadOuts.push_back( { loadOutName, handgun, LongGun, Melee, Helmet, Chest, Legs, Amulet, Ring1, Ring2, KeyV } );
+			loadOuts.push_back( { loadOutName, handgun, LongGun, Melee, Helmet, Chest, Legs, Amulet, Ring1, Ring2, keyText, KeyV } );
 			j++;
 		}
 	}
@@ -122,13 +132,14 @@ void ConfigFile::WriteFile(std::string writeFileName, int numOfLoadOuts, std::ve
 			writeFile << currentLoadOuts[i].Amulet		<< std::endl;
 			writeFile << currentLoadOuts[i].Ring1		<< std::endl;
 			writeFile << currentLoadOuts[i].Ring2		<< std::endl;
+			writeFile << currentLoadOuts[i].keyText		<< std::endl;
 			writeFile << currentLoadOuts[i].KeyV		<< std::endl;
 			writeFile << ":"							<< std::endl;
 		}
 	}
 	catch(int error)
 	{
-		printf("Errno: %d, Error number: %d\n", error);
+		printf("Errno: %d", error);
 	}
 	
 	writeFile.close();

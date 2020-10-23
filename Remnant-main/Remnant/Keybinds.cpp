@@ -77,3 +77,8 @@ void Keybinds::Tick()
 	}
 	HandleKeyreleases();
 }
+
+void Keybinds::Clear()
+{
+	keybinds.clear();
+}

@@ -1,6 +1,6 @@
 #pragma once
 
-// Name: Remnant, Version: 6
+// Name: Remnant Dump, Version: V1
 
 #include "../SDK.h"
 
@@ -17,6 +17,76 @@ namespace UFT
 //---------------------------------------------------------------------------
 // Parameters
 //---------------------------------------------------------------------------
+
+// Function GunfireRuntime.WaterFXComponent.IsInWater
+struct UWaterFXComponent_IsInWater_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterType
+struct UWaterFXComponent_GetWaterType_Params
+{
+	class UClass*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterLevel
+struct UWaterFXComponent_GetWaterLevel_Params
+{
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterFXComponent.GetWaterDepth
+struct UWaterFXComponent_GetWaterDepth_Params
+{
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth
+struct UWaterFXComponent_GetSubmergeDepth_Params
+{
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap
+struct UWaterOverlapComponent_OnEndOverlap_Params
+{
+	class AActor*                                      OverlappedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap
+struct UWaterOverlapComponent_OnEndComponentOverlap_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                         OtherComp;                                                 // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                OtherBodyIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap
+struct UWaterOverlapComponent_OnBeginOverlap_Params
+{
+	class AActor*                                      OverlappedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap
+struct UWaterOverlapComponent_OnBeginComponentOverlap_Params
+{
+	class UPrimitiveComponent*                         OverlappedComponent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                         OtherComp;                                                 // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                OtherBodyIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               bFromSweep;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHitResult                                  SweepResult;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WaterOverlapComponent.InWater
+struct UWaterOverlapComponent_InWater_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
 
 // Function GunfireRuntime.ActorModifier.SetOwner
 struct UActorModifier_SetOwner_Params
@@ -189,6 +259,39 @@ struct UActorModifier_ComputeDerivedStats_Params
 {
 };
 
+// Function GunfireRuntime.AnimActorState.UpdateMovementParams
+struct UAnimActorState_UpdateMovementParams_Params
+{
+	class UStateMachineComponent*                      StateMachine;                                              // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponComponent.NotifyHitTarget
+struct UWeaponComponent_NotifyHitTarget_Params
+{
+	struct FDamageInfo                                 DamageInfo;                                                // (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponComponent.ModifyInspectInfo
+struct UWeaponComponent_ModifyInspectInfo_Params
+{
+	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInspectInfo                                In;                                                        // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FInspectInfo                                Out;                                                       // (Parm, OutParm, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponComponent.ModifyDamage
+struct UWeaponComponent_ModifyDamage_Params
+{
+	struct FDamageInfo                                 Info;                                                      // (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                               Rtn;                                                       // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponComponent.ComputeStats
+struct UWeaponComponent_ComputeStats_Params
+{
+	class UStatsComponent*                             Stats;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function GunfireRuntime.ActionBase.SetCause
 struct UActionBase_SetCause_Params
 {
@@ -307,6 +410,12 @@ struct UActionBase_AllowAction_Params
 	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar
+struct UWeaponAffinityComponent_ComputeScalar_Params
+{
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function GunfireRuntime.Item.ValidateAdd
 struct AItem_ValidateAdd_Params
 {
@@ -416,6 +525,150 @@ struct AItem_DropBounce_Params
 // Function GunfireRuntime.Item.Bounce
 struct AItem_Bounce_Params
 {
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom
+struct UWeaponPhantomComponent_StopWeaponPhantom_Params
+{
+	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms
+struct UWeaponPhantomComponent_StopAllWeaponPhantoms_Params
+{
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom
+struct UWeaponPhantomComponent_StartWeaponPhantom_Params
+{
+	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      Cause;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                      DamageType;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                      ImpactDirection;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                      ImpactEffect;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FName                                       EffectBone;                                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEffectSpawnDirection                              EffectSpawnDirection;                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                                    EffectOrientation;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                              DamageMod;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              DamageScalar;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               Blockable;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               Evadable;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int                                                PowerOverride;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                              HitCooldown;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.SetSuspended
+struct UWeaponPhantomComponent_SetSuspended_Params
+{
+	bool                                               bIsSuspended;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit
+struct UWeaponPhantomComponent_MarkActorHit_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.IsSuspended
+struct UWeaponPhantomComponent_IsSuspended_Params
+{
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor
+struct UWeaponPhantomComponent_HasRecentlyHitActor_Params
+{
+	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable
+struct UWeaponPhantomComponent_HasAnyOverlappingDamageable_Params
+{
+	TArray<class AActor*>                              IgnoredActors;                                             // (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                               bIgnoreDeadActors;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WorldSoundComponent.SetAudioList
+struct UWorldSoundComponent_SetAudioList_Params
+{
+	TArray<struct FWorldSound>                         NewAudioList;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                               bReset;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WorldSoundComponent.ResetTimers
+struct UWorldSoundComponent_ResetTimers_Params
+{
+};
+
+// Function GunfireRuntime.WoundedComponent.StopReviveActor
+struct UWoundedComponent_StopReviveActor_Params
+{
+};
+
+// Function GunfireRuntime.WoundedComponent.ServerKillSelf
+struct UWoundedComponent_ServerKillSelf_Params
+{
+};
+
+// Function GunfireRuntime.WoundedComponent.ReviveActor
+struct UWoundedComponent_ReviveActor_Params
+{
+	class AActor*                                      Target;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.Revive
+struct UWoundedComponent_Revive_Params
+{
+	float                                              HealthMultiplier;                                          // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                               SelfRevive;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.OnRep_State
+struct UWoundedComponent_OnRep_State_Params
+{
+};
+
+// Function GunfireRuntime.WoundedComponent.OnCinematicPlaying
+struct UWoundedComponent_OnCinematicPlaying_Params
+{
+	struct FSequencerPlayerSettings                    Settings;                                                  // (Parm, NativeAccessSpecifierPublic)
+	class ULevelSequence*                              CurrentSequence;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                      Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnWounded
+struct UWoundedComponent_MulticastOnWounded_Params
+{
+	struct FDamageInfo                                 Damage;                                                    // (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived
+struct UWoundedComponent_MulticastOnTargetRevived_Params
+{
+	class UWoundedComponent*                           WoundedComponent;                                          // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.MulticastOnRevived
+struct UWoundedComponent_MulticastOnRevived_Params
+{
+	bool                                               bSelfRevive;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.WoundedComponent.Kill
+struct UWoundedComponent_Kill_Params
+{
+};
+
+// Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct
+struct UWoundedComponent_GetWoundedHealthPct_Params
+{
+	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function GunfireRuntime.Equipment.ValidateEquip
@@ -939,6 +1192,16 @@ struct UTraitsComponent_Purchase_Params
 
 // Function GunfireRuntime.TraitsComponent.OnRep_Traits
 struct UTraitsComponent_OnRep_Traits_Params
+{
+};
+
+// Function GunfireRuntime.TraitsComponent.OnRep_TraitPointsSpent
+struct UTraitsComponent_OnRep_TraitPointsSpent_Params
+{
+};
+
+// Function GunfireRuntime.TraitsComponent.OnRep_TraitPoints
+struct UTraitsComponent_OnRep_TraitPoints_Params
 {
 };
 
@@ -5473,12 +5736,6 @@ struct UAIDirector_ClearAllGroups_Params
 	bool                                               DestroyActiveSpawns;                                       // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function GunfireRuntime.AnimActorState.UpdateMovementParams
-struct UAnimActorState_UpdateMovementParams_Params
-{
-	class UStateMachineComponent*                      StateMachine;                                              // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function GunfireRuntime.AIJumpState.IsAIJumpComplete
 struct UAIJumpState_IsAIJumpComplete_Params
 {
@@ -9024,6 +9281,12 @@ struct UGameUtil_GetPlayerControllerForActor_Params
 {
 	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class APlayerController*                           ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GunfireRuntime.GameUtil.GetPlatformSubType
+struct UGameUtil_GetPlatformSubType_Params
+{
+	EPlatform                                          ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function GunfireRuntime.GameUtil.GetPlatform
@@ -13392,253 +13655,6 @@ struct UVitalityComponent_ApplyDeltaReplicated_Params
 struct UVitalityComponent_ApplyDelta_Params
 {
 	float                                              Delta;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterFXComponent.IsInWater
-struct UWaterFXComponent_IsInWater_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterType
-struct UWaterFXComponent_GetWaterType_Params
-{
-	class UClass*                                      ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterLevel
-struct UWaterFXComponent_GetWaterLevel_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterFXComponent.GetWaterDepth
-struct UWaterFXComponent_GetWaterDepth_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterFXComponent.GetSubmergeDepth
-struct UWaterFXComponent_GetSubmergeDepth_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterOverlapComponent.OnEndOverlap
-struct UWaterOverlapComponent_OnEndOverlap_Params
-{
-	class AActor*                                      OverlappedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterOverlapComponent.OnEndComponentOverlap
-struct UWaterOverlapComponent_OnEndComponentOverlap_Params
-{
-	class UPrimitiveComponent*                         OverlappedComponent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                         OtherComp;                                                 // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                OtherBodyIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterOverlapComponent.OnBeginOverlap
-struct UWaterOverlapComponent_OnBeginOverlap_Params
-{
-	class AActor*                                      OverlappedActor;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterOverlapComponent.OnBeginComponentOverlap
-struct UWaterOverlapComponent_OnBeginComponentOverlap_Params
-{
-	class UPrimitiveComponent*                         OverlappedComponent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      OtherActor;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                         OtherComp;                                                 // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                OtherBodyIndex;                                            // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               bFromSweep;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHitResult                                  SweepResult;                                               // (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WaterOverlapComponent.InWater
-struct UWaterOverlapComponent_InWater_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponComponent.NotifyHitTarget
-struct UWeaponComponent_NotifyHitTarget_Params
-{
-	struct FDamageInfo                                 DamageInfo;                                                // (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponComponent.ModifyInspectInfo
-struct UWeaponComponent_ModifyInspectInfo_Params
-{
-	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInspectInfo                                In;                                                        // (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FInspectInfo                                Out;                                                       // (Parm, OutParm, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponComponent.ModifyDamage
-struct UWeaponComponent_ModifyDamage_Params
-{
-	struct FDamageInfo                                 Info;                                                      // (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                               Rtn;                                                       // (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponComponent.ComputeStats
-struct UWeaponComponent_ComputeStats_Params
-{
-	class UStatsComponent*                             Stats;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponAffinityComponent.ComputeScalar
-struct UWeaponAffinityComponent_ComputeScalar_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.StopWeaponPhantom
-struct UWeaponPhantomComponent_StopWeaponPhantom_Params
-{
-	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.StopAllWeaponPhantoms
-struct UWeaponPhantomComponent_StopAllWeaponPhantoms_Params
-{
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.StartWeaponPhantom
-struct UWeaponPhantomComponent_StartWeaponPhantom_Params
-{
-	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      Cause;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                      DamageType;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                      ImpactDirection;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                      ImpactEffect;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FName                                       EffectBone;                                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEffectSpawnDirection                              EffectSpawnDirection;                                      // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                                    EffectOrientation;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                              DamageMod;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              DamageScalar;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               Blockable;                                                 // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               Evadable;                                                  // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int                                                PowerOverride;                                             // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                              HitCooldown;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.SetSuspended
-struct UWeaponPhantomComponent_SetSuspended_Params
-{
-	bool                                               bIsSuspended;                                              // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.MarkActorHit
-struct UWeaponPhantomComponent_MarkActorHit_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.IsSuspended
-struct UWeaponPhantomComponent_IsSuspended_Params
-{
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.HasRecentlyHitActor
-struct UWeaponPhantomComponent_HasRecentlyHitActor_Params
-{
-	class UObject*                                     WorldContextObject;                                        // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UShapeComponent*                             Shape;                                                     // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      Actor;                                                     // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WeaponPhantomComponent.HasAnyOverlappingDamageable
-struct UWeaponPhantomComponent_HasAnyOverlappingDamageable_Params
-{
-	TArray<class AActor*>                              IgnoredActors;                                             // (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                               bIgnoreDeadActors;                                         // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WorldSoundComponent.SetAudioList
-struct UWorldSoundComponent_SetAudioList_Params
-{
-	TArray<struct FWorldSound>                         NewAudioList;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                               bReset;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WorldSoundComponent.ResetTimers
-struct UWorldSoundComponent_ResetTimers_Params
-{
-};
-
-// Function GunfireRuntime.WoundedComponent.StopReviveActor
-struct UWoundedComponent_StopReviveActor_Params
-{
-};
-
-// Function GunfireRuntime.WoundedComponent.ServerKillSelf
-struct UWoundedComponent_ServerKillSelf_Params
-{
-};
-
-// Function GunfireRuntime.WoundedComponent.ReviveActor
-struct UWoundedComponent_ReviveActor_Params
-{
-	class AActor*                                      Target;                                                    // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.Revive
-struct UWoundedComponent_Revive_Params
-{
-	float                                              HealthMultiplier;                                          // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                               SelfRevive;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.OnRep_State
-struct UWoundedComponent_OnRep_State_Params
-{
-};
-
-// Function GunfireRuntime.WoundedComponent.OnCinematicPlaying
-struct UWoundedComponent_OnCinematicPlaying_Params
-{
-	struct FSequencerPlayerSettings                    Settings;                                                  // (Parm, NativeAccessSpecifierPublic)
-	class ULevelSequence*                              CurrentSequence;                                           // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                      Instigator;                                                // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnWounded
-struct UWoundedComponent_MulticastOnWounded_Params
-{
-	struct FDamageInfo                                 Damage;                                                    // (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnTargetRevived
-struct UWoundedComponent_MulticastOnTargetRevived_Params
-{
-	class UWoundedComponent*                           WoundedComponent;                                          // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.MulticastOnRevived
-struct UWoundedComponent_MulticastOnRevived_Params
-{
-	bool                                               bSelfRevive;                                               // (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GunfireRuntime.WoundedComponent.Kill
-struct UWoundedComponent_Kill_Params
-{
-};
-
-// Function GunfireRuntime.WoundedComponent.GetWoundedHealthPct
-struct UWoundedComponent_GetWoundedHealthPct_Params
-{
-	float                                              ReturnValue;                                               // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }
