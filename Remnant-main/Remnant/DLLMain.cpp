@@ -679,7 +679,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			// right
 			ImGui::BeginGroup();
 			ImGui::BeginChild("item view", ImVec2(0, -ImGui::GetFrameHeightWithSpacing())); // Leave room for 1 line below us
-			ImGui::Text("Loadout: %d", selected);
+			ImGui::Text("Loadout: %s", CurrentLoadOutsInIMGUI[configurationFile.GetGlobalLoadOutIndex()].loadOutName.c_str() );
 			ImGui::Separator();
 
 			// parse through inventory and organize it into the 9 different slot categories
@@ -745,13 +745,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			}
 			ImGui::SameLine();
 
-			//if (ImGui::Button("Equip Now"))
-			//{
-			//	SwitchLoadout = true;
-			//}
-			ImGui::SameLine();
-
-
 			std::string KName;
 
 			// create hotkey button
@@ -790,7 +783,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 					EditKeyState = true;
 			}
 			ImGui::SameLine();
-			ImGui::LabelText("DumbLabel", ":Bind");
+			ImGui::LabelText("DumbLabel", ":Keybind");
 			ImGui::EndGroup();
 		}
 
